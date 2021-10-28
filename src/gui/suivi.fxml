@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1500.0" style="-fx-background-color: #8fbc8f;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SuiviController">
+   <children>
+      <TableView fx:id="table_s" layoutX="217.0" layoutY="145.0" onMouseClicked="#getDataS" prefHeight="200.0" prefWidth="924.0">
+        <columns>
+          <TableColumn fx:id="col_ids" prefWidth="75.0" text="idS" />
+            <TableColumn fx:id="col_idu" prefWidth="75.0" text="idU" />
+            <TableColumn fx:id="col_ds" prefWidth="75.0" text="dateS" />
+            <TableColumn fx:id="col_t" prefWidth="75.0" text="taille" />
+            <TableColumn fx:id="col_p" prefWidth="126.4000244140625" text="poids" />
+            <TableColumn fx:id="col_g" prefWidth="78.4000244140625" text="glycemie" />
+            <TableColumn fx:id="col_pd" prefWidth="111.99993896484375" text="pd" />
+            <TableColumn fx:id="col_r" prefWidth="76.0" text="repas" />
+            <TableColumn fx:id="col_d" prefWidth="136.800048828125" text="diner" />
+            <TableColumn fx:id="col_n" prefWidth="176.79986572265625" text="notes" />
+        </columns>
+      </TableView>
+      <TextField fx:id="rechsid" layoutX="798.0" layoutY="89.0" onKeyPressed="#rechercheparidU" />
+      <Button layoutX="19.0" layoutY="383.0" mnemonicParsing="false" onAction="#SuppS" prefHeight="90.0" prefWidth="184.0" style="-fx-background-color: red;" text="Supprimer Suivi">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Button>
+      <TextField fx:id="tf_mailC" layoutX="493.0" layoutY="480.0" />
+      <TextField fx:id="tf_dateC" layoutX="798.0" layoutY="480.0" />
+      <TextField fx:id="tf_pC" layoutX="798.0" layoutY="442.0" />
+      <TextField fx:id="tf_numC" layoutX="798.0" layoutY="403.0" />
+      <TextField fx:id="tf_adC" layoutX="798.0" layoutY="362.0" />
+      <TextField fx:id="tf_pwC" layoutX="493.0" layoutY="511.0" />
+      <TextField fx:id="tf_prenom" layoutX="493.0" layoutY="442.0" />
+      <TextField fx:id="tf_Ref" layoutX="798.0" layoutY="511.0" />
+      <TextField fx:id="tf_nom" layoutX="493.0" layoutY="403.0" />
+      <TextField fx:id="tf_idC" layoutX="493.0" layoutY="362.0" />
+      <Button fx:id="b_ms" layoutX="643.0" layoutY="545.0" mnemonicParsing="false" onAction="#modS" prefHeight="41.0" prefWidth="184.0" style="-fx-background-color: orange;" text="Modifier Suivi">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font></Button>
+      <Button layoutX="19.0" layoutY="121.0" mnemonicParsing="false" onAction="#ajouS" prefHeight="78.0" prefWidth="184.0" style="-fx-background-color: green;" text="Ajouter Suivi">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font></Button>
+      <Button mnemonicParsing="false" onAction="#exitS" text="Exit">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelUser" layoutX="189.0" layoutY="33.0" prefHeight="50.0" prefWidth="742.0" textFill="#ef0707">
+         <font>
+            <Font name="System Bold Italic" size="43.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

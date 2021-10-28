@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestionUserFXMLController">
+   <children>
+      <ImageView fitHeight="582.0" fitWidth="739.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@p4.PNG" />
+         </image>
+      </ImageView>
+      <Button fx:id="b_gc" layoutX="11.0" layoutY="113.0" mnemonicParsing="false" onAction="#consulterUser" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15;" text="Gérer les comptes">
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
+         </font></Button>
+      <Button layoutX="17.0" layoutY="175.0" mnemonicParsing="false" onAction="#consulterSuser" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15;" text="Gestion Suivis">
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
+         </font></Button>
+      <Button layoutX="14.0" layoutY="238.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15;" text="Gérer Produits">
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
+         </font></Button>
+      <Button layoutX="14.0" layoutY="309.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #0fea88; -fx-background-radius: 15;" text="Gérer Achats">
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
+         </font></Button>
+      <Button layoutX="14.0" layoutY="389.0" mnemonicParsing="false" style="-fx-background-color: #0fea88; -fx-background-radius: 15;" text="Gérer rendez_vous">
+         <font>
+            <Font name="System Bold Italic" size="11.0" />
+         </font></Button>
+      <AnchorPane fx:id="pane_gu" layoutX="131.0" layoutY="101.0" prefHeight="434.0" prefWidth="578.0" style="-fx-background-color: #FF7433;" visible="false">
+         <children>
+            <TableView fx:id="table_users" layoutX="14.0" layoutY="53.0" onMouseClicked="#getDataUA" prefHeight="200.0" prefWidth="564.0">
+              <columns>
+                <TableColumn fx:id="col_id" prefWidth="31.20001220703125" text="C1" visible="false" />
+                <TableColumn fx:id="col_nom" prefWidth="51.20001220703125" text="C2" />
+                  <TableColumn fx:id="col_prenom" prefWidth="44.79998779296875" text="Column X" />
+                  <TableColumn fx:id="col_date" prefWidth="48.0" text="Column X" />
+                  <TableColumn fx:id="col_email" prefWidth="51.199951171875" text="Column X" />
+                  <TableColumn fx:id="col_pw" prefWidth="51.20001220703125" text="Column X" />
+                  <TableColumn fx:id="col_addresse" prefWidth="65.5999755859375" text="Column X" />
+                  <TableColumn fx:id="col_ref" prefWidth="64.800048828125" text="Column X" />
+                  <TableColumn fx:id="col_num" prefWidth="45.5999755859375" text="Column X" />
+                  <TableColumn fx:id="col_civ" prefWidth="39.20001220703125" text="Column X" />
+                  <TableColumn fx:id="col_rol" prefWidth="38.39990234375" text="Column X" />
+                  <TableColumn fx:id="col_maladie" prefWidth="27.2000732421875" text="Column X" />
+              </columns>
+            </TableView>
+            <TextField fx:id="tf_recherche" layoutX="344.0" layoutY="14.0" onKeyPressed="#rechUser" style="-fx-background-radius: 10;" />
+            <Button layoutX="27.0" layoutY="14.0" mnemonicParsing="false" onAction="#ajouterUser" style="-fx-background-color: #0fea88; -fx-background-radius: 15;" text="Ajouter Client">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></Button>
+            <Button layoutX="155.0" layoutY="14.0" mnemonicParsing="false" onAction="#ajouNC" style="-fx-background-color: #0fea88; -fx-background-radius: 15;" text="Ajouter Employer">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Button layoutY="2.0" mnemonicParsing="false" onAction="#exitAdmin" style="-fx-background-color: orange; -fx-background-radius: 12;" text="Exit">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <AnchorPane fx:id="pane_ajouUser" layoutX="138.0" layoutY="101.0" prefHeight="423.0" prefWidth="564.0" style="-fx-background-color: #FF7433;" visible="false">
+         <children>
+            <TextField fx:id="tf_nom" layoutX="122.0" layoutY="89.0" />
+            <TextField fx:id="tf_dN" layoutX="40.0" layoutY="320.0" />
+            <TextField fx:id="tf_prenom" layoutX="122.0" layoutY="127.0" />
+            <TextField fx:id="tf_mail" layoutX="122.0" layoutY="205.0" />
+            <TextField fx:id="tf_pw" layoutX="122.0" layoutY="244.0" />
+            <TextField fx:id="tf_ad" layoutX="326.0" layoutY="89.0" />
+            <TextField fx:id="tf_m" layoutX="220.0" layoutY="307.0" />
+            <TextField fx:id="tf_num" layoutX="326.0" layoutY="167.0" />
+            <TextField fx:id="tf_civ" layoutX="325.0" layoutY="205.0" />
+            <TextField fx:id="tf_ref" layoutX="326.0" layoutY="127.0" />
+            <Button layoutX="416.0" layoutY="366.0" mnemonicParsing="false" onAction="#ajouterUserValide" style="-fx-background-color: green;" text="ajouter" visible="false" />
+            <Button layoutY="14.0" mnemonicParsing="false" onAction="#retourAfficheUser" text="Retour" />
+            <ComboBox fx:id="type_ajouU" layoutX="325.0" layoutY="244.0" prefWidth="150.0" />
+            <DatePicker fx:id="dateN" layoutX="102.0" layoutY="167.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_modUA" layoutX="138.0" layoutY="97.0" prefHeight="423.0" prefWidth="564.0" style="-fx-background-color: #FF7433;" visible="false">
+         <children>
+            <TextField fx:id="tf_nom1" layoutX="122.0" layoutY="89.0" />
+            <TextField fx:id="tf_dN1" layoutX="122.0" layoutY="167.0" />
+            <TextField fx:id="tf_prenom1" layoutX="122.0" layoutY="127.0" />
+            <TextField fx:id="tf_mail1" layoutX="122.0" layoutY="205.0" />
+            <TextField fx:id="tf_pw1" layoutX="122.0" layoutY="244.0" />
+            <TextField fx:id="tf_ad1" layoutX="326.0" layoutY="89.0" />
+            <TextField fx:id="tf_m1" layoutX="326.0" layoutY="244.0" />
+            <TextField fx:id="tf_num1" layoutX="326.0" layoutY="167.0" />
+            <TextField fx:id="tf_civ1" layoutX="325.0" layoutY="205.0" />
+            <TextField fx:id="tf_ref1" layoutX="326.0" layoutY="127.0" />
+            <Button layoutX="416.0" layoutY="366.0" mnemonicParsing="false" onAction="#ModUserValide" text="Modifier" />
+            <Button layoutY="14.0" mnemonicParsing="false" onAction="#retourModUser" text="Retour" />
+            <TextField fx:id="tf_rolM" disable="true" layoutX="197.0" layoutY="27.0" />
+            <Button layoutX="161.0" layoutY="353.0" mnemonicParsing="false" onAction="#supUserValide" text="Supprimer" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_modUANC" layoutX="138.0" layoutY="97.0" prefHeight="423.0" prefWidth="564.0" style="-fx-background-color: #FF7433;" visible="false">
+         <children>
+            <TextField fx:id="tf_nom2" layoutX="122.0" layoutY="89.0" />
+            <TextField fx:id="tf_dN2" layoutX="122.0" layoutY="167.0" />
+            <TextField fx:id="tf_prenom2" layoutX="122.0" layoutY="127.0" />
+            <TextField fx:id="tf_mail2" layoutX="122.0" layoutY="205.0" />
+            <TextField fx:id="tf_pw2" layoutX="122.0" layoutY="244.0" />
+            <TextField fx:id="tf_ad2" layoutX="326.0" layoutY="89.0" />
+            <TextField fx:id="tf_num2" layoutX="326.0" layoutY="167.0" />
+            <TextField fx:id="tf_civ2" layoutX="325.0" layoutY="205.0" />
+            <Button layoutX="416.0" layoutY="366.0" mnemonicParsing="false" onAction="#ModNutValide" text="Modifier" />
+            <Button layoutY="14.0" mnemonicParsing="false" onAction="#retourModNut" text="Retour" />
+            <TextField fx:id="tf_rolM2" disable="true" layoutX="197.0" layoutY="27.0" />
+            <Button layoutX="161.0" layoutY="353.0" mnemonicParsing="false" onAction="#supNutValide" text="Supprimer" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_ajouUser1" layoutX="138.0" layoutY="101.0" prefHeight="423.0" prefWidth="564.0" style="-fx-background-color: #FF7433;" visible="false">
+         <children>
+            <TextField fx:id="tf_nom3" layoutX="122.0" layoutY="89.0" />
+            <TextField fx:id="tf_dN3" layoutX="40.0" layoutY="320.0" />
+            <TextField fx:id="tf_prenom3" layoutX="122.0" layoutY="127.0" />
+            <TextField fx:id="tf_mail3" layoutX="122.0" layoutY="205.0" />
+            <TextField fx:id="tf_pw3" layoutX="122.0" layoutY="244.0" />
+            <TextField fx:id="tf_ad3" layoutX="326.0" layoutY="89.0" />
+            <TextField fx:id="tf_num3" layoutX="326.0" layoutY="167.0" />
+            <TextField fx:id="tf_civ3" layoutX="325.0" layoutY="205.0" />
+            <Button layoutX="416.0" layoutY="366.0" mnemonicParsing="false" onAction="#ajouterNCValide" text="ajouter" />
+            <Button layoutY="14.0" mnemonicParsing="false" onAction="#retourajouNCUser" text="Retour" />
+            <ComboBox fx:id="type_ajouNC" layoutX="325.0" layoutY="244.0" prefWidth="150.0" />
+            <DatePicker fx:id="dateN1" layoutX="119.0" layoutY="167.0" prefHeight="25.0" prefWidth="157.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_suiviuser" layoutX="138.0" layoutY="79.0" prefHeight="487.0" prefWidth="564.0" style="-fx-background-color: #FF7433;" visible="false">
+         <children>
+            <TableView fx:id="table_s" layoutX="14.0" layoutY="65.0" onMouseClicked="#getDataS" prefHeight="200.0" prefWidth="507.0">
+               <columns>
+                  <TableColumn fx:id="com_ids" prefWidth="75.0" text="Column X" visible="false" />
+                  <TableColumn fx:id="col_ds" prefWidth="75.0" text="C1" />
+                  <TableColumn fx:id="col_t" prefWidth="75.0" text="C2" />
+                  <TableColumn fx:id="col_p" prefWidth="46.4000244140625" text="Column X" />
+                  <TableColumn fx:id="col_g" prefWidth="70.4000244140625" text="Column X" />
+                  <TableColumn fx:id="col_pd" prefWidth="60.800048828125" text="Column X" />
+                  <TableColumn fx:id="col_r" prefWidth="65.60003662109375" text="Column X" />
+                  <TableColumn fx:id="col_d" prefWidth="56.0" text="Column X" />
+                  <TableColumn fx:id="col_n" prefWidth="160.800048828125" text="Column X" />
+                  <TableColumn fx:id="col_idUser" prefWidth="75.0" text="Column X" visible="false" />
+               </columns>
+            </TableView>
+            <Button layoutX="268.0" layoutY="342.0" mnemonicParsing="false" onAction="#supuserS" text="Supprimer" />
+            <Label layoutX="165.0" layoutY="21.0" prefHeight="18.0" prefWidth="391.0" text="Historique Suivis" textFill="#139713">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
+               </font>
+            </Label>
+            <Button layoutY="9.0" mnemonicParsing="false" onAction="#retourSuser" text="retour" />
+            <TextField fx:id="rechSSuser" layoutX="361.0" layoutY="282.0" onKeyPressed="#rechSuser" promptText="recherche rapide" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

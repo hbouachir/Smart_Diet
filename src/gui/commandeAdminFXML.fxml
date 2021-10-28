@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.FXMLCommandeController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="pane" layoutX="14.0" layoutY="14.0" prefHeight="534.0" prefWidth="683.0">
+         <children>
+            <AnchorPane layoutX="-7.0" layoutY="-9.0" prefHeight="114.0" prefWidth="1015.0" style="-fx-background-color: #fff;">
+               <children>
+                  <Button layoutX="749.0" layoutY="18.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="213.0" style="-fx-background-color: #2c304d;" text="Logout" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@logout%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ImageView depthTest="DISABLE" fitHeight="385.0" fitWidth="911.0" layoutX="25.0" layoutY="-192.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@istockphoto-1208813268-1024x1024.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="-19.0" layoutY="105.0" prefHeight="785.0" prefWidth="213.0" style="-fx-background-color: #2c304d;">
+               <children>
+                  <Button layoutX="-9.0" layoutY="25.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="213.0" style="-fx-background-color: #2c304d;" text="Home" textFill="WHITE" />
+                  <Button fx:id="commande" layoutX="14.0" layoutY="80.0" mnemonicParsing="false" onAction="#commandePress" prefHeight="50.0" prefWidth="189.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Commandes" textFill="WHITE" />
+                  <Button fx:id="Statistique" layoutX="14.0" layoutY="150.0" mnemonicParsing="false" onAction="#StatistiquePress" prefHeight="45.0" prefWidth="189.0" style="-fx-background-color: #2c304d;" text="Statistiques" textFill="WHITE" />
+                  <Button layoutX="43.0" layoutY="209.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="160.0" style="-fx-background-color: #2c304d;" text="Liste des produits" textFill="WHITE" />
+                  <Button layoutX="4.0" layoutY="303.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="205.0" style="-fx-background-color: #2c304d;" text="Reclamation" textFill="WHITE" />
+                  <ImageView fitHeight="42.0" fitWidth="53.0" layoutX="10.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@warning.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="78.0" layoutX="10.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@grocery%20(2).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="78.0" layoutX="16.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@trend.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="45.0" fitWidth="42.0" layoutX="16.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@cargo.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="53.0" layoutX="18.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Desktop/home.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="18.0" layoutY="254.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="166.0" style="-fx-background-color: #2c304d;" text="Utilisateurs" textFill="WHITE" />
+                  <ImageView fitHeight="42.0" fitWidth="53.0" layoutX="10.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@users.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Text layoutX="515.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recherche" wrappingWidth="97.5546875" />
+            <Button fx:id="supper" layoutX="828.0" layoutY="547.0" mnemonicParsing="false" onAction="#SupprimerCommande" text="supprimer" />
+            <TextField fx:id="rech" layoutX="627.0" layoutY="170.0" />
+            <TableView fx:id="TableCommande" layoutX="203.0" layoutY="230.0" prefHeight="300.0" prefWidth="726.0">
+              <columns>
+                  <TableColumn fx:id="id" prefWidth="75.0" text="id" visible="false" />
+                  <TableColumn fx:id="email1" prefWidth="75.0" text="Nom" />
+                  <TableColumn fx:id="email11" prefWidth="75.0" text="Prénom" />
+                  <TableColumn fx:id="email" prefWidth="75.0" text="Email" />
+                <TableColumn fx:id="adrese" prefWidth="75.0" text="adresse" />
+                <TableColumn fx:id="ville" prefWidth="75.0" text="ville" />
+                  <TableColumn fx:id="codepostal" prefWidth="72.0" text="codePostal" />
+                  <TableColumn fx:id="numtel" prefWidth="71.0" text="numTel" />
+                  <TableColumn fx:id="dateliv" prefWidth="115.0" text="dateLivraison" />
+                  <TableColumn fx:id="prixtot" prefWidth="133.0" text="prixTotal" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1500.0" style="-fx-background-color: #8fbc8f;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterSuiviController">
+   <children>
+      <Label layoutX="646.0" layoutY="52.0" text="Ajouter Suivii..." textFill="#df1919">
+         <font>
+            <Font name="System Bold Italic" size="29.0" />
+         </font>
+      </Label>
+      <TextField fx:id="n" layoutX="659.0" layoutY="438.0" />
+      <TextField fx:id="di" layoutX="809.0" layoutY="376.0" />
+      <TextField fx:id="r" layoutX="527.0" layoutY="363.0" />
+      <TextField fx:id="pd" layoutX="809.0" layoutY="300.0" />
+      <TextField fx:id="g" layoutX="527.0" layoutY="300.0" />
+      <TextField fx:id="t" layoutX="520.0" layoutY="234.0" />
+      <TextField fx:id="po" layoutX="809.0" layoutY="234.0" />
+      <Button layoutX="724.0" layoutY="523.0" mnemonicParsing="false" onAction="#ajouuS" style="-fx-background-color: yellow;" text="Valider">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font></Button>
+      <Button layoutY="1.0" mnemonicParsing="false" onAction="#exitajouS" text="Exit">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

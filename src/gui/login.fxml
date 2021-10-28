@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="442.0" prefWidth="414.0" style="-fx-background-color: #8fbc8f;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LoginController">
+   <children>
+      <ImageView fitHeight="441.0" fitWidth="576.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@p.jpg" />
+         </image>
+      </ImageView>
+      <HBox prefHeight="71.0" prefWidth="442.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#LoginpaneShow" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #0fea88;" text="LogIn" textFill="#f4f0f0">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#SingpaneShow" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #0fea88;" text="Creér un compte" textFill="#f7f4f4">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <AnchorPane fx:id="pane_login" layoutY="129.0" prefHeight="200.0" prefWidth="442.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <ComboBox fx:id="type" layoutX="259.0" layoutY="21.0" prefWidth="150.0" promptText="Privilege" style="-fx-background-color: #0fea88;" />
+            <TextField fx:id="login_mail" layoutX="118.0" layoutY="62.0" promptText="Email" />
+            <Button layoutX="234.0" layoutY="159.0" mnemonicParsing="false" onAction="#loginin" prefHeight="26.0" prefWidth="135.0" text="Connecter" textFill="#38ae5d">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <PasswordField fx:id="login_pw" layoutX="119.0" layoutY="114.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_singnup" layoutY="129.0" prefHeight="234.0" prefWidth="442.0" visible="false">
+         <children>
+            <ComboBox fx:id="type_insert" layoutX="279.0" layoutY="14.0" prefWidth="150.0" promptText="Type" style="-fx-background-color: #0fea88;" />
+            <TextField fx:id="nom_insert" layoutX="41.0" layoutY="40.0" promptText="Votre Nom" />
+            <TextField fx:id="prenom_insert" layoutX="41.0" layoutY="78.0" promptText="Votre Prenom" />
+            <TextField fx:id="email_insert" layoutX="41.0" layoutY="117.0" promptText="Email" />
+            <TextField fx:id="pw_insert" layoutX="41.0" layoutY="184.0" promptText="mot de pass" />
+            <Button layoutX="322.0" layoutY="184.0" mnemonicParsing="false" onAction="#singup" prefHeight="26.0" prefWidth="83.0" text="Créer" textFill="#0ed76f">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font></Button>
+            <Label fx:id="l" layoutX="238.0" layoutY="141.0" prefHeight="18.0" prefWidth="190.0" textFill="#ea0505">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dateNClient" layoutX="43.0" layoutY="150.0" prefHeight="26.0" prefWidth="150.0" promptText="DateNaissance" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

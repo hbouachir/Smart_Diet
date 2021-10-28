@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1500.0" style="-fx-background-color: #8fbc8f;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GestionUserController">
+   <children>
+      <AnchorPane layoutX="-9.0" prefHeight="600.0" prefWidth="342.0" style="-fx-background-color: #008000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-9.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="b_GC" layoutX="16.0" layoutY="63.0" mnemonicParsing="false" onAction="#gestionC" prefHeight="76.0" prefWidth="306.0" text="GestionClient">
+               <font>
+                  <Font name="System Bold Italic" size="26.0" />
+               </font></Button>
+            <Button layoutX="14.0" layoutY="309.0" mnemonicParsing="false" onAction="#gestionS" prefHeight="66.0" prefWidth="306.0" text=" suivi">
+               <font>
+                  <Font name="System Bold Italic" size="35.0" />
+               </font></Button>
+            <Button layoutX="16.0" layoutY="186.0" mnemonicParsing="false" onAction="#suivi" prefHeight="66.0" prefWidth="306.0" text="GestionSuivi">
+               <font>
+                  <Font name="System Bold Italic" size="31.0" />
+               </font></Button>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table_users" layoutX="345.0" layoutY="161.0" onMouseClicked="#getData" prefHeight="230.0" prefWidth="1078.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="44.0" text="ID" />
+          <TableColumn fx:id="col_nom" prefWidth="74.39996337890625" text="Nom" />
+            <TableColumn fx:id="col_prenom" prefWidth="62.399993896484375" text="Prenom" />
+            <TableColumn fx:id="col_date" prefWidth="120.0" text="Date de Naissance" />
+            <TableColumn fx:id="col_email" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="col_pw" prefWidth="75.0" text="Password" />
+            <TableColumn fx:id="col_addresse" prefWidth="111.199951171875" text="Adresse" />
+            <TableColumn fx:id="col_ref" prefWidth="84.0" text="RefClient" />
+            <TableColumn fx:id="col_num" prefWidth="93.60009765625" text="Numero tel" />
+            <TableColumn fx:id="col_civ" prefWidth="92.0" text="Civilite" />
+            <TableColumn fx:id="col_rol" prefWidth="122.4000244140625" text="privilege" />
+            <TableColumn fx:id="col_maladie" prefWidth="123.199951171875" text="Maladie" />
+        </columns>
+      </TableView>
+      <Button fx:id="b_ref" layoutX="909.0" layoutY="14.0" mnemonicParsing="false" onAction="#refTable" text="ref">
+         <effect>
+            <Reflection />
+         </effect>
+      </Button>
+      <TextField fx:id="tf_recherche" layoutX="519.0" layoutY="67.0" onKeyPressed="#recherche" prefHeight="44.0" prefWidth="254.0" promptText="entrer role" />
+      <Button fx:id="b_supp" layoutX="345.0" layoutY="448.0" mnemonicParsing="false" onAction="#delete" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FF0000;" text="Supprimer" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="n" layoutX="497.0" layoutY="416.0" />
+      <TextField fx:id="pri" layoutX="609.0" layoutY="498.0" />
+      <TextField fx:id="p1" layoutX="714.0" layoutY="460.0" />
+      <TextField fx:id="e" layoutX="503.0" layoutY="460.0" />
+      <TextField fx:id="p" layoutX="722.0" layoutY="416.0" />
+      <Button layoutX="658.0" layoutY="550.0" mnemonicParsing="false" onAction="#ajouterNCM" text="ajouter" />
+   </children>
+</AnchorPane>
