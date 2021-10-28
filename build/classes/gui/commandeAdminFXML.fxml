@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLCommandeController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="anchoreCommande" layoutX="14.0" layoutY="14.0" prefHeight="534.0" prefWidth="683.0">
+         <children>
+            <AnchorPane layoutX="-7.0" layoutY="-9.0" prefHeight="114.0" prefWidth="1015.0" style="-fx-background-color: #fff;">
+               <children>
+                  <Button layoutX="749.0" layoutY="18.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="213.0" style="-fx-background-color: #2c304d;" text="Logout" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="42.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@logout%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ImageView depthTest="DISABLE" fitHeight="385.0" fitWidth="911.0" layoutX="25.0" layoutY="-192.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@istockphoto-1208813268-1024x1024.jpg" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="rech" layoutX="590.0" layoutY="185.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="-19.0" layoutY="105.0" prefHeight="785.0" prefWidth="213.0" style="-fx-background-color: #2c304d;">
+               <children>
+                  <Button layoutX="-9.0" layoutY="25.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="213.0" style="-fx-background-color: #2c304d;" text="Home" textFill="WHITE" />
+                  <Button fx:id="commande" layoutX="14.0" layoutY="80.0" mnemonicParsing="false" onAction="#commandePress" prefHeight="50.0" prefWidth="189.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Commandes" textFill="WHITE" />
+                  <Button fx:id="ligneCommande" layoutX="14.0" layoutY="150.0" mnemonicParsing="false" onAction="#ligneCommandePress" prefHeight="45.0" prefWidth="189.0" style="-fx-background-color: #2c304d;" text="Ligne Commandes " textFill="WHITE" />
+                  <Button layoutX="43.0" layoutY="209.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="160.0" style="-fx-background-color: #2c304d;" text="Liste des produits" textFill="WHITE" />
+                  <Button layoutX="4.0" layoutY="303.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="205.0" style="-fx-background-color: #2c304d;" text="Reclamation" textFill="WHITE" />
+                  <ImageView fitHeight="42.0" fitWidth="53.0" layoutX="10.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@warning.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="78.0" layoutX="10.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@grocery%20(2).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="78.0" layoutX="16.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@trend.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="45.0" fitWidth="42.0" layoutX="16.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@cargo.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="42.0" fitWidth="53.0" layoutX="18.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@home.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="18.0" layoutY="254.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="166.0" style="-fx-background-color: #2c304d;" text="Utilisateurs" textFill="WHITE" />
+                  <ImageView fitHeight="42.0" fitWidth="53.0" layoutX="10.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@users.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Text layoutX="515.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recherche" wrappingWidth="97.5546875" />
+            <Button fx:id="supper" layoutX="828.0" layoutY="547.0" mnemonicParsing="false" onMouseClicked="#SupprimerCommande" text="supprimer" />
+            <TableView fx:id="TableCommande" layoutX="272.0" layoutY="286.0" onMouseClicked="#selectCommande" prefHeight="286.0" prefWidth="519.0">
+              <columns>
+                  <TableColumn fx:id="idCLlient" prefWidth="248.0" text="N° client" />
+                  <TableColumn fx:id="montantPanier" prefWidth="360.0" text="montant" />
+                  <TableColumn fx:id="idCommande" prefWidth="176.0" text="idCommande" />
+              </columns>
+            </TableView>
+            <Label layoutX="351.0" layoutY="199.0" prefHeight="72.0" prefWidth="258.0" text="Liste des commandes" textFill="#154275">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Button fx:id="idCherche" layoutX="639.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#onClickId" text="chercher" textFill="#ae0d0d" />
+            <Button layoutX="813.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#onClickVoirCommande" text="Voir commande" />
+            <Button fx:id="pdf" layoutX="829.0" layoutY="417.0" mnemonicParsing="false" onMouseClicked="#pdfExtract" text="Exract pdf" />
+            <Button fx:id="mail" layoutX="813.0" layoutY="485.0" mnemonicParsing="false" onMouseClicked="#mailing" text="Envoyer un mail" />
+            <Button layoutX="542.0" layoutY="615.0" mnemonicParsing="false" onAction="#onAjouterCommande" text="Ajouter Commande" />
+            <TextField fx:id="tfClient" layoutX="351.0" layoutY="615.0" />
+            <TextField fx:id="tfMontant" layoutX="351.0" layoutY="665.0" />
+            <Label layoutX="279.0" layoutY="619.0" text="Code client" />
+            <Label layoutX="286.0" layoutY="669.0" text="montant" />
+            <Button layoutX="545.0" layoutY="665.0" mnemonicParsing="false" onAction="#onModifierCommande" text="modifier commande" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
