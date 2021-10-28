@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="701.0" prefWidth="1008.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.HomeController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="pane" layoutX="8.0" layoutY="112.0" prefHeight="534.0" prefWidth="683.0" style="x-background-color: bliue;" styleClass="pi">
+         <children>
+            <AnchorPane layoutX="46.0" layoutY="55.0" prefHeight="50.0" prefWidth="962.0" style="-fx-background-color: #696969;">
+               <children>
+                  <Button layoutX="749.0" layoutY="18.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="213.0" style="-fx-background-color: #2c304d;" text="Logout" textFill="WHITE" />
+                  <Label layoutX="194.0" layoutY="14.0" text="WELCOME APPLICATION SMART DIET" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="105.0" prefHeight="785.0" prefWidth="213.0" style="-fx-background-color: #2c304d;">
+               <children>
+                  <Button layoutX="15.0" layoutY="25.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="189.0" style="-fx-background-color: white;" text="Home" textFill="#2f2c2c" />
+                  <Button fx:id="btnFacture" layoutX="12.0" layoutY="150.0" mnemonicParsing="false" onAction="#CRUDFacturesTransition" prefHeight="50.0" prefWidth="189.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Facture" textFill="WHITE" />
+                  <Button fx:id="btnPayment" alignment="CENTER" layoutX="12.0" layoutY="85.0" mnemonicParsing="false" onAction="#CRUDPaymentTransition" prefHeight="45.0" prefWidth="189.0" style="-fx-background-color: white;" text="Payments" textAlignment="RIGHT" textFill="#222121" />
+                  <ImageView fitHeight="45.0" fitWidth="51.0" layoutX="12.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/paye.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="66.0" layoutX="13.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/fac.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="51.0" layoutX="6.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/home.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <MediaView fitHeight="200.0" fitWidth="200.0" layoutX="268.0" layoutY="199.0" />
+            <Button layoutX="388.0" layoutY="223.0" mnemonicParsing="false" onAction="#play" onMouseDragExited="#play" text="Button" />
+         </children>
+      </AnchorPane>
+      <Circle fx:id="circle" fill="DODGERBLUE" layoutX="94.0" layoutY="91.0" radius="94.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DisplacementMap?>
+<?import javafx.scene.effect.FloatMap?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.CRUDPaymentController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="pane" layoutX="22.0" layoutY="14.0" prefHeight="534.0" prefWidth="683.0" style="-fx-background-image: paye.jpg;">
+         <children>
+            <AnchorPane layoutX="-7.0" layoutY="-9.0" prefHeight="114.0" prefWidth="986.0" style="-fx-background-color: gris;">
+               <children>
+                  <ImageView fitHeight="800.0" fitWidth="500.0" layoutX="300.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/bare1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="114.0" fitWidth="258.0" layoutX="14.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/oo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="-19.0" layoutY="121.0" prefHeight="769.0" prefWidth="248.0" style="-fx-background-color: #2c304d;">
+               <children>
+                  <Button layoutX="18.0" layoutY="23.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" style="-fx-background-color: white;" text="Home" textFill="#282626" />
+                  <Button fx:id="payments" layoutX="14.0" layoutY="80.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="189.0" style="-fx-background-color: white; -fx-text-fill: black;" text="payements" textFill="WHITE" />
+                  <Button fx:id="facture" layoutX="14.0" layoutY="150.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="189.0" style="-fx-background-color: white;" text="Facture" textFill="#1e1d1d" />
+                  <ImageView fitHeight="50.0" fitWidth="51.0" layoutX="18.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/home.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="45.0" fitWidth="51.0" layoutX="18.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/paye.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="45.0" fitWidth="59.0" layoutX="16.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/fac.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Text layoutX="698.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recherche" wrappingWidth="97.5546875" />
+            <TextField fx:id="tfRecherche" layoutX="808.0" layoutY="170.0" />
+            <AnchorPane layoutX="240.0" layoutY="211.0" prefHeight="219.0" prefWidth="350.0" style="-fx-background-color: #FFF8DC;">
+               <children>
+                    <TextField fx:id="tfid1" layoutX="194.0" layoutY="49.0" />
+                     <TextField fx:id="tfid2" layoutX="194.0" layoutY="49.0" />
+                  <TextField fx:id="tfnumero" layoutX="194.0" layoutY="49.0" />
+                  <TextField fx:id="tfpassword" layoutX="194.0" layoutY="90.0" />
+                  <Text layoutX="32.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="97.5546875" />
+                  <Text layoutX="32.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="numeroCompte" wrappingWidth="97.5546875" />
+                  <Text layoutX="32.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password" wrappingWidth="97.5546875" />
+                  <Text layoutX="32.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dateExpiration" wrappingWidth="97.5546875" />
+                  <TextField fx:id="tfdate" layoutX="193.0" layoutY="134.0" />
+               </children>
+            </AnchorPane>
+            <HBox alignment="CENTER" blendMode="MULTIPLY" cache="true" cacheHint="ROTATE" depthTest="ENABLE" layoutX="302.0" layoutY="456.0" prefHeight="50.0" prefWidth="273.0" spacing="20.0" style="-fx-background-color: #FFF8DC;">
+               <children>
+                  <ImageView fitHeight="31.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/ajouter.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnAddPayement" contentDisplay="TOP" mnemonicParsing="false" onAction="#AddPayement" text="Ajouter" textFill="#b8488e">
+                     <effect>
+                        <ColorAdjust brightness="-0.14" contrast="0.17" hue="0.07" saturation="0.05" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="btnDeletePayement" contentDisplay="TOP" mnemonicParsing="false" onAction="#DeletePayment" text="supprimer" textFill="#b8488e">
+                     <effect>
+                        <ColorAdjust brightness="-0.14" contrast="0.17" hue="0.07" saturation="0.05" />
+                     </effect>
+                  </Button>
+                  <ImageView fitHeight="31.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/affciher.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DisplacementMap>
+                     <mapData>
+                        <FloatMap />
+                     </mapData>
+                  </DisplacementMap>
+               </effect>
+               <opaqueInsets>
+                  <Insets left="10.0" />
+               </opaqueInsets>
+            </HBox>
+            <TableView fx:id="tabPayement" layoutX="630.0" layoutY="226.0" prefHeight="194.0" prefWidth="573.0">
+               <columns>
+                  <TableColumn fx:id="id" prefWidth="75.0" text="id" visible="false" />
+                  <TableColumn fx:id="colnumero" prefWidth="154.0" text="numeroCompte">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="68.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.63" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/numero.jpg" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="colpassword" prefWidth="140.0" text="password">
+                     <graphic>
+                        <ImageView fx:id="img" fitHeight="60.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/password.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="coldate" prefWidth="135.0" text="dateExpirationn">
+                     <graphic>
+                        <ImageView fitHeight="87.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/date.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </TableColumn>
+               </columns>
+            </TableView>
+            <Button fx:id="btnHomeTransition" layoutX="877.0" layoutY="668.0" mnemonicParsing="false" onAction="#HomeTransition" prefHeight="35.0" prefWidth="59.0" text="Retour" />
+            <Button layoutX="1011.0" layoutY="43.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="98.0" style="-fx-background-color: #2c304d;" text="Logout" textFill="WHITE" />
+            <Button fx:id="EditPayement" layoutX="640.0" layoutY="459.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#EditPayment" text="modifier" />
+            <Button fx:id="EditPayement1" layoutX="735.0" layoutY="459.0" lineSpacing="10.0" mnemonicParsing="false" onAction="#Lbutton" text="Afficher" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
