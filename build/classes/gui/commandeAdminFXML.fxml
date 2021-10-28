@@ -88,9 +88,8 @@
                   <Font size="24.0" />
                </font></Label>
             <Button fx:id="idCherche" layoutX="639.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#onClickId" text="chercher" textFill="#ae0d0d" />
-            <Button layoutX="813.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#onClickVoirCommande" text="Voir commande" />
             <Button fx:id="pdf" layoutX="829.0" layoutY="417.0" mnemonicParsing="false" onMouseClicked="#pdfExtract" text="Exract pdf" />
-            <Button fx:id="mail" layoutX="813.0" layoutY="485.0" mnemonicParsing="false" onMouseClicked="#mailing" text="Envoyer un mail" />
+            <Button fx:id="mail" layoutX="813.0" layoutY="485.0" mnemonicParsing="false" onMouseClicked="#mailing" text="Valider Commande par mail" />
             <Button layoutX="542.0" layoutY="615.0" mnemonicParsing="false" onAction="#onAjouterCommande" text="Ajouter Commande" />
             <TextField fx:id="tfClient" layoutX="351.0" layoutY="615.0" />
             <TextField fx:id="tfMontant" layoutX="351.0" layoutY="665.0" />

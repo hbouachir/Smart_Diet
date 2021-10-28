@@ -206,13 +206,25 @@ public class AfficherCommandesAdminFXMLController implements Initializable {
         lignecommandeService cs = new lignecommandeService();
              cs.delete(a);
              tableLigneCommande.setItems(cs.findAll());
+            
+             float prixTotal =cs.calcul();
+            setIdPrixLabel(String.valueOf(prixTotal));
+            
+             commandeService css=new commandeService();
+             commande co=new commande();
+         co.setIdClient(css.findUserByIdCommande(c));
+         System.out.println(co.getIdClient());
+         float k=co.getMontantPanier()-b;
+         co.setMontantPanier(k);
+         css.update( co, c);
+            
              a=0;
              b=0;
              c=0;
              d=0;
              e=0;
-             float prixTotal =cs.calcul();
-            setIdPrixLabel(String.valueOf(prixTotal));
+            
+            
             
     }
 
@@ -266,6 +278,14 @@ public class AfficherCommandesAdminFXMLController implements Initializable {
            
                 System.out.println(h);
                 setIdPrixLabel(String.valueOf(h));
+         commande co= new commande();
+         
+         commandeService cs=new commandeService();
+         co.setIdClient(cs.findUserByIdCommande(s));
+         System.out.println(co.getIdClient());
+         float w=cs.findMontantByIdCommande(s)+g;
+         co.setMontantPanier(w);
+         cs.update( co, s);
                 }
 
     

@@ -12,12 +12,12 @@ package entites;
 public class commande {
     private int idCommande;
     private int idClient;
-    private int montantPanier;
+    private float montantPanier;
 
     public commande() {
     }
 
-    public commande(int idClient, int montantPanier) {
+    public commande(int idClient, float montantPanier) {
         
         this.idClient = idClient;
         this.montantPanier = montantPanier;
@@ -31,7 +31,7 @@ public class commande {
         return idClient;
     }
 
-    public int getMontantPanier() {
+    public float getMontantPanier() {
         return montantPanier;
     }
 
@@ -43,7 +43,7 @@ public class commande {
         this.idClient = idClient;
     }
 
-    public void setMontantPanier(int montantPanier) {
+    public void setMontantPanier(float montantPanier) {
         this.montantPanier = montantPanier;
     }
 

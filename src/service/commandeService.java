@@ -48,7 +48,7 @@ public class commandeService implements Service<commande>{
            
             PreparedStatement pt= Connection.prepareStatement(req);
             pt.setInt(1, object.getIdClient());
-            pt.setInt(2, object.getMontantPanier());
+            pt.setFloat(2, object.getMontantPanier());
             
             pt.executeUpdate();
         } catch (SQLException ex) {
@@ -128,9 +128,28 @@ ObservableList<commande> listC=FXCollections.observableArrayList();
             
             return listC;    }
 
- 
-
+    
+    
 
    
-    
+    public int findUserByIdCommande(int id) throws SQLException{
+             String req1 ="SELECT idClient as tot from `commande` where idCommande="+id+"";
+             Statement st= Connection.createStatement();
+             ResultSet rs=st.executeQuery(req1);
+             System.out.println(rs.first());
+             
+             
+        return rs.getInt("tot");}
+        
+        public int findMontantByIdCommande(int id) throws SQLException{
+             String req1 ="SELECT montantPanier as tot from `commande` where idCommande="+id+"";
+             Statement st= Connection.createStatement();
+             ResultSet rs=st.executeQuery(req1);
+             System.out.println(rs.first());
+             
+             
+        return rs.getInt("tot");
+         
+         
+         }
 }
