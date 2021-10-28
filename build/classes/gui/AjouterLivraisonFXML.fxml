@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterLivraisonFXMLController">
+   <children>
+      <Button fx:id="butt1" layoutX="232.0" layoutY="217.0" mnemonicParsing="false" onAction="#ajouterLivraisonFX" prefHeight="25.0" prefWidth="79.0" text="Ajouter" />
+      <TextField fx:id="tfIdLivreur" layoutX="162.0" layoutY="36.0" />
+      <TextField fx:id="tfIdPayment" layoutX="162.0" layoutY="84.0" />
+      <TextField fx:id="tfEtatLivraison" layoutX="162.0" layoutY="134.0" />
+      <Label layoutX="24.0" layoutY="41.0" text="Id Livreur" />
+      <Label layoutX="24.0" layoutY="89.0" text="Id Payment" />
+      <Label layoutX="24.0" layoutY="139.0" text="Etat Livraison" />
+      <Button fx:id="retourAjout" layoutX="23.0" layoutY="361.0" mnemonicParsing="false" onAction="#versHomeLiv" prefHeight="25.0" prefWidth="70.0" text="Retour" />
+      <Label fx:id="controleIdLivreur" layoutX="334.0" layoutY="41.0" prefHeight="17.0" prefWidth="149.0" textFill="#ee0606" />
+      <Label fx:id="controleIdPayment" layoutX="334.0" layoutY="88.0" prefHeight="17.0" prefWidth="149.0" textFill="#f50606" />
+      <Label fx:id="controleEtatLivraison" layoutX="334.0" layoutY="139.0" prefHeight="17.0" prefWidth="149.0" textFill="#eb0707" />
+      <Label fx:id="succAjout" layoutX="24.0" layoutY="221.0" prefHeight="17.0" prefWidth="189.0" textFill="#13b258" />
+      <Label layoutX="24.0" layoutY="176.0" text="Date de Livraison" />
+      <TextField fx:id="tfDateLiv" layoutX="162.0" layoutY="172.0" />
+   </children>
+</AnchorPane>
