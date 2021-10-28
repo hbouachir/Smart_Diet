@@ -97,6 +97,7 @@ public class FXMLCommandeController implements Initializable {
      */
     
         private int index = -1;
+        
         private int a,b,c;
     @FXML
     private Button supper;
@@ -152,7 +153,10 @@ public class FXMLCommandeController implements Initializable {
 
 
         a=idCLlient.getCellData(index);
-        b=montantPanier.getCellData(index);
+        System.out.println(  montantPanier.getCellData(index));
+        
+        b=  montantPanier.getCellData(index);
+        
         c=idCommande.getCellData(index);
         //tfClient.setText(String.valueOf(a));
         tfMontant.setText(String.valueOf(b));

@@ -215,7 +215,7 @@ public class AfficherCommandesAdminFXMLController implements Initializable {
          co.setIdClient(css.findUserByIdCommande(c));
          System.out.println(co.getIdClient());
          float k=co.getMontantPanier()-b;
-         co.setMontantPanier(k);
+         co.setMontantPanier((int) k);
          css.update( co, c);
             
              a=0;
@@ -283,7 +283,7 @@ public class AfficherCommandesAdminFXMLController implements Initializable {
          commandeService cs=new commandeService();
          co.setIdClient(cs.findUserByIdCommande(s));
          System.out.println(co.getIdClient());
-         float w=cs.findMontantByIdCommande(s)+g;
+         int w=(int)cs.findMontantByIdCommande(s)+g;
          co.setMontantPanier(w);
          cs.update( co, s);
                 }
