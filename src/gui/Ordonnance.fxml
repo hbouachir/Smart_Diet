@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.OrdonnanceController">
+   <children>
+      <ImageView fitHeight="128.0" fitWidth="126.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/images%20(1).jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="204.0" fitWidth="103.0" layoutX="492.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/jjjjj.jpeg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

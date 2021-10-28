@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="rech" prefHeight="530.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TemplateController">
+   <children>
+      <AnchorPane layoutX="7.0" layoutY="99.0" prefHeight="426.0" prefWidth="234.0" style="-fx-background-color: #2c304d;">
+         <children>
+            <Button fx:id="RDV" layoutX="4.0" layoutY="46.0" mnemonicParsing="false" onAction="#insertRdv" prefHeight="44.0" prefWidth="218.0" style="-fx-background-color: white;" text="Rendez-vous" />
+            <Button fx:id="cons" layoutX="4.0" layoutY="128.0" mnemonicParsing="false" onAction="#insertCons" prefHeight="44.0" prefWidth="218.0" style="-fx-background-color: white;" text="Consultation" />
+            <ImageView fitHeight="44.0" fitWidth="53.0" layoutX="6.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="343.0">
+               <image>
+                  <Image url="@../Image/rendez-vous-calendrier.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="44.0" fitWidth="53.0" layoutX="6.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/consultation-nutritionniste.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="6.0" layoutY="6.0" prefHeight="88.0" prefWidth="710.0">
+         <children>
+            <ImageView fitHeight="90.0" fitWidth="254.0" layoutX="456.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="1.0">
+               <image>
+                  <Image url="@../Image/Nutritionniste.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="90.0" fitWidth="378.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/Nutritionniste.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="90.0" fitWidth="182.0" layoutX="365.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/images.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="274.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/images.jpg" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

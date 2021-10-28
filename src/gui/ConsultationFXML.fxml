@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" focusTraversable="true" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ORDONNANCEFXMLController">
+   <children>
+      <Button fx:id="btnOrdonnance" layoutX="43.0" layoutY="300.0" mnemonicParsing="false" onAction="#ImprimerOrdonnance" prefHeight="41.0" prefWidth="236.0" text="Imprime" textFill="#161717" />
+      <TableView fx:id="tbrConst" layoutX="340.0" layoutY="67.0" prefHeight="200.0" prefWidth="236.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="idrdv" prefWidth="75.0" text="IDRdv" />
+            <TableColumn fx:id="ord" prefWidth="85.0" text="Ordonnance" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="67.0" fitWidth="147.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="41.0" fitWidth="71.0" layoutX="43.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/iconImprimer.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
