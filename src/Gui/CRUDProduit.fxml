@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="542.0" prefWidth="962.0" style="-fx-background-color: #33FFBE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.CRUDProduitController">
+   <children>
+      <Label layoutX="34.0" layoutY="186.0" text="nom" />
+      <Label layoutX="31.0" layoutY="226.0" text="description" />
+      <Label layoutX="34.0" layoutY="262.0" text="quantité" />
+      <Label layoutX="36.0" layoutY="296.0" text="prix" />
+      <Label layoutX="31.0" layoutY="336.0" text="statut" />
+      <TextField fx:id="tfnom" layoutX="118.0" layoutY="186.0" />
+      <TextField fx:id="tfdescription" layoutX="118.0" layoutY="226.0" />
+      <TextField fx:id="tfquantité" layoutX="118.0" layoutY="262.0" />
+      <TextField fx:id="tfprix" layoutX="118.0" layoutY="296.0" />
+      <TextField fx:id="tfstatut" layoutX="118.0" layoutY="332.0" />
+      <Button fx:id="btnHomeTransition" layoutX="846.0" layoutY="465.0" mnemonicParsing="false" onAction="#HomeTransition" prefHeight="35.0" prefWidth="59.0" text="Retour" />
+      <Button fx:id="btnAddProduit" layoutX="38.0" layoutY="435.0" mnemonicParsing="false" onAction="#AddProduit" prefHeight="41.0" prefWidth="59.0" text="Ajouter" />
+      <Button fx:id="btnEditProduit" layoutX="118.0" layoutY="435.0" mnemonicParsing="false" onAction="#EditProduit" prefHeight="41.0" prefWidth="67.0" text="Modifier" />
+      <Button fx:id="btnDeleteProduit" layoutX="214.0" layoutY="435.0" mnemonicParsing="false" onAction="#DeleteProduit" prefHeight="41.0" prefWidth="78.0" text="Supprimer" />
+      <TableView fx:id="tabProduit" layoutX="303.0" layoutY="179.0" onMouseClicked="#getSelectedProduit" prefHeight="200.0" prefWidth="590.0">
+        <columns>
+          <TableColumn fx:id="colcodeProduit" prefWidth="94.0" text="codeProduit" />
+          <TableColumn fx:id="colnom" prefWidth="56.0" text="nom" />
+            <TableColumn fx:id="coldescription" prefWidth="75.0" text="description" />
+            <TableColumn fx:id="colquantité" prefWidth="75.0" text="quantité" />
+            <TableColumn fx:id="colprix" prefWidth="75.0" text="prix" />
+            <TableColumn fx:id="colstatut" prefWidth="107.0" text="statut" />
+            <TableColumn fx:id="colcategorie" prefWidth="107.0" text="categorie" />
+        </columns>
+      </TableView>
+      <Label layoutX="33.0" layoutY="147.0" text="code Produit" visible="false" />
+      <TextField fx:id="tfcodeProduit" layoutX="118.0" layoutY="143.0" visible="false" />
+      <TextField fx:id="tfRecherche" layoutX="573.0" layoutY="28.0" promptText="codeProduit/nom" />
+      <Label layoutX="497.0" layoutY="32.0" text="Recherche" />
+      <ImageView fitHeight="108.0" fitWidth="163.0" layoutX="34.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/4.PNG" />
+         </image>
+      </ImageView>
+      <Label layoutX="33.0" layoutY="379.0" text="categorie" />
+      <TextField fx:id="tfcategorie" layoutX="118.0" layoutY="375.0" />
+   </children>
+</AnchorPane>
