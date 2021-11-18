@@ -1,0 +1,15 @@
+{% extends 'back.html.twig' %}
+{% block body %}
+
+<h1>Ajout Produit</h1>
+
+
+{# {{ form(p) }} #}
+
+{{ form_start(p,{'attr':{'novalidate':'novalidate'}}) }}
+
+{{ form(p,{'method':'GET'}) }}
+
+{{ form_end(p) }}
+
+{% endblock%}

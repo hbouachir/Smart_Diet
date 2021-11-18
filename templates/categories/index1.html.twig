@@ -1,0 +1,33 @@
+{% extends 'Front2.html.twig' %}
+
+{% block title %}Hello  CategorieController!{% endblock %}
+{% block body %}
+    <doctype html>
+    <html>
+    <body>
+
+    <div style="margin-left:600px;" >
+        <table border="1" style=" border: 5px solid powderblue;">
+            <tr style="border: 5px solid powderblue;">
+                <th style="border: 5px solid powderblue;">id</th>
+                <th style="border: 5px solid powderblue;">nom</th>
+                <th style="border: 5px solid powderblue;">description</th>
+                <th style="border: 5px solid powderblue;">statut</th>
+
+            </tr>
+            <tr {% for a in c %} style="border: 5px solid powderblue;">
+                <td style="border: 5px solid powderblue;">{{a.id}}</td>
+                <td style="border: 5px solid powderblue;">{{a.nom}}</td>
+                <td style="border: 5px solid powderblue;">{{a.description}}</td>
+                <td style="border: 5px solid powderblue;">{{a.statut}}</td>
+
+
+            </tr {% endfor %}>
+        </table>
+        <br>
+    </div>
+
+    </body>
+    </html>
+
+{% endblock %}

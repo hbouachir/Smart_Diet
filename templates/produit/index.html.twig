@@ -1,0 +1,38 @@
+{% extends 'Front1.html.twig' %}
+
+{% block title %}Hello ProduitController!{% endblock %}
+{% block body %}
+<doctype html>
+<html>
+<body>
+
+<div style="margin-left:600px;" >
+<table border="1" style=" border: 5px solid powderblue;">
+    <tr style="border: 5px solid powderblue;">
+        <th style="border: 5px solid powderblue;">codeProduit</th>
+        <th style="border: 5px solid powderblue;">nom</th>
+        <th style="border: 5px solid powderblue;">description</th>
+        <th style="border: 5px solid powderblue;">quantite</th>
+        <th style="border: 5px solid powderblue;">Prix</th>
+        <th style="border: 5px solid powderblue;">statut</th>
+        <th style="border: 5px solid powderblue;">Categorie</th>
+
+    </tr>
+    <tr {% for a in p %} style="border: 5px solid powderblue;">
+        <td style="border: 5px solid powderblue;">{{a.codeProduit}}</td>
+        <td style="border: 5px solid powderblue;">{{a.nom}}</td>
+        <td style="border: 5px solid powderblue;">{{a.description}}</td>
+        <td style="border: 5px solid powderblue;">{{a.quantite}}</td>
+        <td style="border: 5px solid powderblue;">{{a.prix}}</td>
+        <td style="border: 5px solid powderblue;">{{a.statut}}</td>
+        <td style="border: 5px solid powderblue;">{{a.categorie}}</td>
+
+    </tr {% endfor %}>
+</table>
+<br>
+</div>
+
+</body>
+</html>
+
+{% endblock %}

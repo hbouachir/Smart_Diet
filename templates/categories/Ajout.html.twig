@@ -1,0 +1,15 @@
+{% extends 'back.html.twig' %}
+{% block body %}
+
+    <h1>Ajout Categorie</h1>
+
+    {# {{ form(p) }} #}
+
+    {{ form_start(c,{'attr':{'novalidate':'novalidate'}}) }}
+
+    {{ form(c,{'method':'GET'}) }}
+
+    {{ form_end(c) }}
+
+
+{% endblock %}
