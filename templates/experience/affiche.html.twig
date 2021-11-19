@@ -1,0 +1,92 @@
+{% extends 'commandeFront.html.twig' %}
+
+{% block title %}Hello Partagez vos éxpériences{% endblock %}
+
+{% block body %}
+<div class="page-title-area bg-15">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>Retour d'éxpérience</h2>
+
+            <ul>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>News</li>
+
+                <li class="active">Retour d'expériences</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End Page Title Area -->
+
+
+<!-- Start Shopping Cart Area -->
+
+<div class="container">
+    <form class="cart-controller">
+        <div class="cart-table table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">Trash</th>
+
+                    <th scope="col">Nom prénom</th>
+                    <th scope="col">Note</th>
+                    <th scope="col">Avis</th>
+                    <th scope="col">Modifier</th>
+                </tr>
+                </thead>
+
+
+
+                <tbody>
+                {% for exp in experiences  %}
+
+                    <tr>
+                        <td class="trash">
+                            <a href="{{ path('experienceSupprime',{'id':exp.id}) }}" class="remove">
+                                <i class="bx bx-trash"></i>
+
+                            </a>
+                        </td>
+
+
+
+                        <td class="product-name">
+                            <a href="product-details.html">{{ exp.clientId }}</a>
+                        </td>
+
+                        <td class="product-price">
+                            <span class="unit-amount">{{ exp.note }}</span>
+                        </td>
+
+
+
+                        <td class="product-subtotal">
+                            <span class="subtotal-amount">{{ exp.avis }}</span>
+                        </td>
+                        <td class="trash">
+                            <a href="{{ path('experienceModifie',{'id':exp.id}) }}" class="remove">
+                                <i class="bx bx-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+
+
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+    </form>
+
+
+</div>
+        {% endblock %}

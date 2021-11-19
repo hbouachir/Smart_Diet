@@ -1,0 +1,42 @@
+{% extends 'commandeFront.html.twig' %}
+
+{% block title %}Donnez votre avis{% endblock %}
+
+{% block body %}
+    <div class="page-title-area bg-15">
+        <div class="container">
+            <div class="page-title-content">
+                <h2>Votre avis nous interesse</h2>
+
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>News</li>
+
+                    <li class="active">Donnez votre avis</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title Area -->
+
+
+    <!-- Start Shopping Cart Area -->
+    <div>
+        <h1>Donnnez votre avis sur notre site</h1>
+        <div class="d-flex justify-content-center">{{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn-primary">ajouter</button>
+        {{ form_end(form) }}
+        </div>
+
+
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lignecommande{% endblock %}
+
+{% block body %}
+    <h1>Lignecommande</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idligne</th>
+                <td>{{ lignecommande.idligne }}</td>
+            </tr>
+            <tr>
+                <th>Quantite</th>
+                <td>{{ lignecommande.quantite }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ lignecommande.prix }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('lignecommande_index') }}">back to list</a>
+
+    <a href="{{ path('lignecommande_edit', {'idligne': lignecommande.idligne}) }}">edit</a>
+
+    {{ include('lignecommande/_delete_form.html.twig') }}
+{% endblock %}
