@@ -1,0 +1,66 @@
+<table class="table" border="1">
+    <tr>
+        <th>Id</th>
+
+        <th>Nom</th>
+
+        <th>prenom</th>
+
+        <th>dateNaissance</th>
+
+        <th>email</th>
+
+        <th>password</th>
+
+        <th>adresse</th>
+
+        <th>referenceClient</th>
+
+        <th>Numero</th>
+
+        <th>civilite</th>
+
+
+        <th>services</th>
+
+    </tr>
+    <tbody>
+    {% for f in c %}
+        <tr>
+
+        <td>{{ f.idsuivi }}</td>
+
+
+        <td>{{ f.iduser.id }}</td>
+
+
+        <td>{{ f.datesuivi }}</td>
+
+
+        <td>{{ f.taille }}</td>
+
+
+        <td>{{ f.poid }}</td>
+
+
+        <td>{{ f.glycemie }}</td>
+
+
+        <td>{{ f.petitdej }}</td>
+
+        <td>{{ f.repas }}</td>
+
+        <td>{{ f.diner }}</td>
+
+        <td>{{ f.notes }}</td>
+
+
+            <td><a href="{{ path('DS',{'id':f.idsuivi }) }}" class="btn btn-danger deletebtn">Delete</a></td>
+            <td><a href="{{ path('US',{'id':f.idsuivi}) }}" class="btn btn-primary">Update</a></td>
+
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<a href="{{ path('AjouS') }}" class="btn btn-success" data-toggle="modal" data-target="#studentaddmodal" >Add</a>
