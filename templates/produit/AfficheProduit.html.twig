@@ -1,0 +1,48 @@
+<style>
+h1{
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10em;
+}
+table{
+    width: 100%;
+}
+th{
+    color: blue;
+}
+</style>
+{# <img src="../../public/back/img/products/QRcode.jpg"> #}
+{% block body %}
+
+        <h1>Liste des Produits</h1>
+        <table border="1" >
+        <thead>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Quantite</th>
+                    <th>Prix</th>
+                    <th>Statut</th>
+                    <th>Categorie</th>
+                    <th>Ref</th>
+        </thead>
+
+            <tbody>
+            <tr {% for a in p %}>
+                <tr>
+                <td>{{a.nom}}</td>
+                <td>{{a.description}}</td>
+                <td>{{a.quantite}}</td>
+                <td>{{a.prix}}</td>
+                <td>{{a.statut}}</td>
+                <td>{{a.categorie}}</td>
+                <td>{{a.codeProduit}} {{a.categorie}}</td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+
+        </table>
+
+{% endblock %}

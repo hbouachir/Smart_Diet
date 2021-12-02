@@ -1,10 +1,13 @@
 {% extends 'back.html.twig' %}
+{#
+
+
 {% block body %}
 
 <h1>Ajout Produit</h1>
 
 
-{# {{ form(p) }} #}
+{# {{ form(p) }}
 
 {{ form_start(p,{'attr':{'novalidate':'novalidate'}}) }}
 
@@ -13,3 +16,81 @@
 {{ form_end(p) }}
 
 {% endblock%}
+
+
+
+
+#}
+
+
+{% block body %}
+    <div class="app-content">
+
+    <div class="side-app">
+
+    <div class="row">
+    <div class="col-md-12">
+        <div class="card m-b-20">
+            <div class="card-header">
+                <h3 class="card-title">Ajouter Produit</h3>
+
+            </div>
+            {{ form_start(p)}}
+            <div class="card-body">
+
+                <form>
+                    <div class="form-group">
+                        <label class="form-label" for="exampleInputname">Nom de Produit</label>
+                        {{ form_widget(p.nom , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Nom produit'}} ) }}
+                        {{ form_errors(p.nom) }}
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="exampleInputEmail2">Description</label>
+                        {{ form_widget(p.description , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Description'}} ) }}
+                        {{ form_errors(p.description) }}
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Quantité</label>
+                        {{ form_widget(p.quantite , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'quantite'}} ) }}
+                        {{ form_errors(p.quantite) }}
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Prix</label>
+                        {{ form_widget(p.prix , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Prix en dinars'}} ) }}
+                        {{ form_errors(p.prix) }}
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="exampleInputEmail2">Statut</label>
+                        {{ form_widget(p.statut , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Statut'}} ) }}
+                        {{ form_errors(p.statut) }}
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="exampleInputPassword2">Catégorie</label>
+                        {{ form_widget(p.categorie , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Catégorie'}} ) }}
+                        {{ form_errors(p.categorie) }}
+                    </div>
+                    <div class="form-group mb-0">
+                        <div class="checkbox checkbox-secondary">
+                            {{ form_widget(p) }}
+                            <button type="SubmitType" class="btn btn-primary " onClick="validateSubmit()">Ajouter produit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {{ form_end(p) }}
+        </div>
+
+    </div>
+    <script>
+
+        function validateSubmit() {
+            result = confirm("Êtes-vous sur de vouloir ajouter produit ?");
+            if (result) {
+                $('#form').submit();
+
+
+            }
+        }
+    </script>
+{% endblock %}

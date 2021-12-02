@@ -26,12 +26,12 @@ class CategoriesType extends AbstractType
                     'placeholder'=>'Description'
                 ]
             ])
-            ->add('statut',ChoiceType::class,[
-                'choices'=> array(
-                    'disponible'=>'disponible',
-                    'indisponible'=>'indisponible',
+            ->add('statut',TextType::class,[
 
-                )
+                'label'=>'statut',
+                'attr'=>[
+                    'placeholder'=>'statut' ]
+
             ])
         ;
     }

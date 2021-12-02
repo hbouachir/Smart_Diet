@@ -1,0 +1,56 @@
+
+{% extends 'Front1.html.twig' %}
+
+
+{% block title%} Liste des Produits par prix{% endblock %}
+
+{% block body %}
+    {{ form_start(p) }}
+
+    <div class="form-row align-items-end" >
+        <div class="col">
+            {{ form_row(p.minPrice) }}
+        </div>
+        <div class="col">
+            {{ form_row(p.maxPrice) }}
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Rechercher</button>
+            </div>
+        </div>
+    </div>
+    {{ form_end(p) }}
+
+    {% if produits %}
+        <table id="articles" class="table table-striped">
+            <thead>
+            <tr>
+                <th class="wd-15p">nom</th>
+                <th class="wd-20p">Description</th>
+                <th class="wd-15p">Quantité </th>
+                <th class="wd-15p">Prix</th>
+                <th class="wd-15p">statut</th>
+                <th class="wd-15p">Catégorie</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for a in produits %}
+                <tr>
+                    <td>{{a.nom}}</td>
+                    <td>{{a.description}}</td>
+                    <td>{{a.quantite}}</td>
+                    <td>{{a.prix}}</td>
+                    <td>{{a.statut}}</td>
+                    <td>{{a.categorie}}</td>
+
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+                {% else %}
+                    <p>Aucun produits</p>
+    {% endif %}
+{% endblock %}

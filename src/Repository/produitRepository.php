@@ -19,6 +19,29 @@ class produitRepository extends ServiceEntityRepository
         parent::__construct($registry, Produit::class);
     }
 
+
+    public function findByPriceRange($minValue,$maxValue)
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.prix >= :minVal')
+            ->setParameter('minVal', $minValue)
+            ->andWhere('a.prix <= :maxVal')
+            ->setParameter('maxVal', $maxValue)
+            ->orderBy('a.prix', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+
+    public function findStudentByNsc($quantite){
+        return $this->createQueryBuilder('p')
+            ->where('p.quantite LIKE :quantite')
+            ->setParameter('quantite', '%'.$quantite.'%')
+            ->getQuery()
+            ->getResult();
+    }
     // /**
     //  * @return Produit[] Returns an array of Produit objects
     //  */

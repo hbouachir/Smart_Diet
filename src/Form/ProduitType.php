@@ -39,19 +39,19 @@ class ProduitType extends AbstractType
                     'placeholder'=>'Prix'
                 ]
             ])
-            ->add('statut',ChoiceType::class,[
-                'choices'=> array(
-                    'disponible'=>'disponible',
-                    'indisponible'=>'indisponible',
+            ->add('statut',TextType::class,[
+                    'label'=>'statut',
+                    'attr'=>[
+                        'placeholder'=>'statut'
 
-                )
+                ]
             ])
             ->add('categorie',ChoiceType::class,[
                 'choices'=> array(
-                    'categorie A '=>'categorie A',
-                    'categorie B'=>'categorie B',
-                    'categorie C'=>'categorie C',
-                    'categorie D'=>'categorie D',
+                    'categorie A '=>'A',
+                    'categorie B'=>'B',
+                    'categorie C'=>'C',
+                    'categorie D'=>'D',
                 )
             ])
         ;

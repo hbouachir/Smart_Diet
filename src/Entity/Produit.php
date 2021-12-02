@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-use Symfony\Component\Validator\Constraints as Assert;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -30,21 +30,21 @@ class Produit
 
     /**
      * @var string
-     *@Assert\NotBlank
+     *
      * @ORM\Column(name="description", type="string", length=255, nullable=false)
      */
     private $description;
 
     /**
      * @var int
-     *@Assert\Positive
+     *
      * @ORM\Column(name="quantite", type="integer", nullable=false)
      */
     private $quantite;
 
     /**
      * @var int
-     *@Assert\Positive
+     *
      * @ORM\Column(name="prix", type="integer", nullable=false)
      */
     private $prix;
@@ -62,6 +62,13 @@ class Produit
      * @ORM\Column(name="categorie", type="string", length=255, nullable=false)
      */
     private $categorie;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="ref", type="string", length=255, nullable=true)
+     */
+    private $ref;
 
     public function getCodeproduit(): ?int
     {
@@ -136,6 +143,18 @@ class Produit
     public function setCategorie(string $categorie): self
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getRef(): ?string
+    {
+        return $this->ref;
+    }
+
+    public function setRef(?string $ref): self
+    {
+        $this->ref = $ref;
 
         return $this;
     }

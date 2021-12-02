@@ -1,15 +1,81 @@
 {% extends 'back.html.twig' %}
+{#
+
+
 {% block body %}
 
-    <h1>Ajout Categorie</h1>
-
-    {# {{ form(p) }} #}
-
-    {{ form_start(c,{'attr':{'novalidate':'novalidate'}}) }}
-
-    {{ form(c,{'method':'GET'}) }}
-
-    {{ form_end(c) }}
+<h1>Ajout Produit</h1>
 
 
+{# {{ form(p) }}
+
+{{ form_start(p,{'attr':{'novalidate':'novalidate'}}) }}
+
+{{ form(p,{'method':'GET'}) }}
+
+{{ form_end(p) }}
+
+{% endblock%}
+
+
+
+
+#}
+
+
+{% block body %}
+    <div class="app-content">
+
+    <div class="side-app">
+
+    <div class="row">
+    <div class="col-md-12">
+        <div class="card m-b-20">
+            <div class="card-header">
+                <h3 class="card-title">Ajouter Catégorie</h3>
+
+            </div>
+            {{ form_start(c)}}
+            <div class="card-body">
+
+                <form>
+                    <div class="form-group">
+                        <label class="form-label" for="exampleInputname">Nom de Catégorie</label>
+                        {{ form_widget(c.nom , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Nom catégorie'}} ) }}
+                        {{ form_errors(c.nom) }}
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="exampleInputEmail2">Description</label>
+                        {{ form_widget(c.description , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Description'}} ) }}
+                        {{ form_errors(c.description) }}
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="exampleInputEmail2">Statut</label>
+                        {{ form_widget(c.statut , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Statut'}} ) }}
+                        {{ form_errors(c.statut) }}
+                    </div>
+                    <div class="form-group mb-0">
+                        <div class="checkbox checkbox-secondary">
+                            {{ form_widget(c) }}
+                            <button type="SubmitType" class="btn btn-primary " onClick="validateSubmit()">Ajouter Catégorie</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {{ form_end(c) }}
+        </div>
+
+    </div>
+    <script>
+
+        function validateSubmit() {
+            result = confirm("Êtes-vous sur de vouloir ajouter produit ?");
+            if (result) {
+                $('#form').submit();
+
+
+            }
+        }
+    </script>
 {% endblock %}

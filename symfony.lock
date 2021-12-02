@@ -1,4 +1,7 @@
 {
+    "cmen/google-charts-bundle": {
+        "version": "4.0.0"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.4"
     },
@@ -82,20 +85,47 @@
     "doctrine/sql-formatter": {
         "version": "1.1.2"
     },
+    "dompdf/dompdf": {
+        "version": "v1.1.1"
+    },
     "egulias/email-validator": {
         "version": "3.1.2"
     },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
+    "illuminate/collections": {
+        "version": "v8.74.0"
+    },
+    "illuminate/contracts": {
+        "version": "v8.74.0"
+    },
+    "illuminate/macroable": {
+        "version": "v8.74.0"
+    },
+    "illuminate/support": {
+        "version": "v8.74.0"
+    },
+    "knplabs/knp-components": {
+        "version": "v3.3.0"
+    },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v5.7.0"
+    },
     "laminas/laminas-code": {
         "version": "4.4.3"
+    },
+    "mercuryseries/flashy": {
+        "version": "1.0.4"
     },
     "monolog/monolog": {
         "version": "1.26.1"
     },
     "myclabs/deep-copy": {
         "version": "1.10.2"
+    },
+    "nesbot/carbon": {
+        "version": "2.54.0"
     },
     "nikic/php-parser": {
         "version": "v4.13.1"
@@ -105,6 +135,12 @@
     },
     "phar-io/version": {
         "version": "3.1.0"
+    },
+    "phenx/php-font-lib": {
+        "version": "0.5.2"
+    },
+    "phenx/php-svg-lib": {
+        "version": "0.3.4"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
@@ -158,6 +194,12 @@
     },
     "psr/log": {
         "version": "1.1.4"
+    },
+    "psr/simple-cache": {
+        "version": "1.0.1"
+    },
+    "sabberworm/php-css-parser": {
+        "version": "8.3.1"
     },
     "sebastian/cli-parser": {
         "version": "1.0.1"
@@ -584,6 +626,9 @@
     },
     "twig/twig": {
         "version": "v3.3.3"
+    },
+    "voku/portable-ascii": {
+        "version": "1.5.6"
     },
     "webmozart/assert": {
         "version": "1.10.0"

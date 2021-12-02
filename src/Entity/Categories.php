@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Entity;
-use Symfony\Component\Validator\Constraints as Assert;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Categories
  *
  * @ORM\Table(name="categories")
- * @ORM\Entity(repositoryClass="App\Repository\categoriesRepository")
+ * @ORM\Entity
  */
 class Categories
 {
@@ -23,14 +23,14 @@ class Categories
 
     /**
      * @var string
-     *@Assert\NotBlank
+     *
      * @ORM\Column(name="nom", type="string", length=255, nullable=false)
      */
     private $nom;
 
     /**
      * @var string
-     *@Assert\NotBlank
+     *
      * @ORM\Column(name="description", type="string", length=255, nullable=false)
      */
     private $description;

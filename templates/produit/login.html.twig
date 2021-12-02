@@ -1,0 +1,25 @@
+
+{% extends 'back.html.twig' %}
+
+{% block title%} Liste des Produits par prix{% endblock %}
+
+{% block body %}
+{{ form_start(p) }}
+
+<div class="form-row align-items-end" >
+    <div class="col">
+        {{ form_row(p.nom) }}
+    </div>
+    <div class="col">
+        {{ form_row(p.mdp) }}
+    </div>
+
+    <div class="col">
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Sing in</button>
+        </div>
+    </div>
+</div>
+{{ form_end(p) }}
+
+{% endblock %}

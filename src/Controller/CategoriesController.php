@@ -40,12 +40,12 @@ class CategoriesController extends AbstractController
     /**
      * @param Request $request
      * @return Response
-     * @Route ("AjoutC/")
+     * @Route ("AjoutC/" ,name="Ajc")
      */
     function ajout(Request $request){
         $categories=new Categories();
         $form=$this->createForm(  CategoriesType::class,$categories);
-        $form->add('Ajouter Categories',SubmitType::class);
+
         $form->handleRequest($request);
         if($form->isSubmitted() &&$form->isValid() ){
             $em=$this->getDoctrine()->getManager();
@@ -66,18 +66,11 @@ class CategoriesController extends AbstractController
      */
     function remove($id,categoriesRepository $repository,Request $request){
         $categories=$repository->find($id);
-        $form=$this->createForm(CategoriesType::class,$categories);
-        $form->add('Delete',SubmitType::class);
-        $form->handleRequest($request);
-        if($form->isSubmitted() &&$form->isValid() ) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($categories);
             $em->flush();
             return $this->redirectToRoute('C');
-        }
 
-        return $this->render("categories/Ajout.html.twig",
-            ['c'=>$form->createView()]);
     }
 
 

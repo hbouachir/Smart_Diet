@@ -1,0 +1,35 @@
+
+<h2> Recherche par Categorie </h2>
+
+<form method="post">
+
+    <input type="text" name="categorie">
+    <input type="submit" value="recherche">
+
+
+<h2>List produits</h2>
+<table border="2">
+
+    <tr>
+
+        <th class="wd-15p">nom</th>
+        <th class="wd-20p">Description</th>
+        <th class="wd-15p">Quantité </th>
+        <th class="wd-15p">Prix</th>
+        <th class="wd-15p">statut</th>
+        <th class="wd-15p">Catégorie</th>
+
+    </tr>
+    <tr {% for a in produit %}>
+
+        <td>{{a.nom}}</td>
+        <td>{{a.description}}</td>
+        <td>{{a.quantite}}</td>
+        <td>{{a.prix}}</td>
+        <td>{{a.statut}}</td>
+        <td>{{a.categorie}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+</form>
