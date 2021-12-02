@@ -407,6 +407,10 @@
 <!-- Start Shopping Cart Area -->
 <div class="shopping-cart-area wishlist-style ptb-100">
     <div class="container">
+        <div class="shopping-cart-area wishlist-style ptb-100">
+            <div><h3>Nutritionniste connecté a pour id = {{ app.session.get('id') }} </h3>
+
+            </div>
         <a href="{{ path('AjouS') }}" class="btn btn-success" >AjouterSuivi</a>
         <form class="cart-controller">
             <div class="cart-table table-responsive">

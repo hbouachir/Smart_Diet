@@ -16,6 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
 
 
 class PersonneController extends AbstractController
@@ -30,9 +31,9 @@ class PersonneController extends AbstractController
 
         ]);}
     /**
-     * @Route("/", name="user")
+     * @Route("/lp", name="user")
      */
-    public function logadmin(Request $request): Response
+    public function logadmin (Request $request): Response
     {
         return $this->render('admin/loginadmin.html.twig', [
 
@@ -49,6 +50,18 @@ class PersonneController extends AbstractController
 
 
     }
+    /**
+     * @Route("/app", name="app")
+     */
+    public function app(Request $request): Response
+    {
+        return $this->render('/base.html.twig', [
+
+        ]);
+
+
+    }
+
     /**
      * @Route ("AFF/",name="A")
      */
@@ -111,7 +124,7 @@ class PersonneController extends AbstractController
             $em->persist($client);
             $em->flush();
             $this->addFlash('notice', 'Votre client à bien été ajouter !');
-            return $this->redirectToRoute('A');
+            return $this->redirectToRoute('user_login');
 
         }
         return $this->render("personne/AjouClient.html.twig",
@@ -147,7 +160,7 @@ class PersonneController extends AbstractController
             // load the user in some way (e.g. using the form input)
             $emaill = $request->request->get('mail');
             $pw = $request->request->get('password');
-            $user = $this->entityManager->getRepository(Personne::class)->findOneBy(['email' => $emaill]);
+           # $user = $this->entityManager->getRepository(Personne::class)->findOneBy(['email' => $emaill]);
             if (!$user) {
                 // fail authentication with a custom error
                 throw new CustomUserMessageAuthenticationException('Email could not be found.');
@@ -175,7 +188,7 @@ class PersonneController extends AbstractController
                     'Client' => 'client',
                     'Admin' => 'admin',
                     'Nutritionniste' => 'nutritionniste',
-                    'Admin' => 'admin',)))
+                   )))
 
 
             ->add('mail', TextType::class,[
@@ -208,7 +221,7 @@ class PersonneController extends AbstractController
             }
             else
             {
-                if (!$session->has('id'))
+                if (!$session->has('id','name'))
                 {$session->set('id',$user1->getId());
                     $id = $session->get('id');
                   $iduser =$suivi->getIduser($id);

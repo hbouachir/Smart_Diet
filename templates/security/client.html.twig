@@ -406,6 +406,9 @@
 </header>
 <!-- Start Shopping Cart Area -->
 <div class="shopping-cart-area wishlist-style ptb-100">
+<div><h3>le client connecté a pour id = {{ app.session.get('id') }} </h3>
+
+</div>
     <div class="container">
         <a href="{{ path('AjouS') }}" class="btn btn-success" >AjouterSuivi</a>
 

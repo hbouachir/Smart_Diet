@@ -62,6 +62,7 @@ class SuiviController extends AbstractController
         {$suivi= new Suivi();
             $form = $this->createForm(SuiviFormType::class, $suivi);
             $form->add('Ajouter',SubmitType::class);
+
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();

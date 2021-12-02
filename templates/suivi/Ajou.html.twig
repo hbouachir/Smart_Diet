@@ -16,6 +16,10 @@
 {{ form_start(f) }}
 <div class="modal-body">
     <div class="form-group">
+       <input name="idU" value=" {{ app.session.get('id') }}">
+
+
+
         {{ form(f,{'method':'GET'}) }}
     </div>
 </div>

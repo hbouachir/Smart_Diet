@@ -407,6 +407,9 @@
 <!-- Start Shopping Cart Area -->
 <div class="shopping-cart-area wishlist-style ptb-100">
     <div class="container">
+        <div><ul><li>{{ app.session.get('id') }}</li>
+
+            </ul></div>
         <a href="{{ path('AjouC') }}" class="btn btn-success" >AjouterClient
         </a>
         <form class="cart-controller">
