@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: #5eb5e0;
+        }
+    </style>
+    <link rel="stylesheet" href="../../public/styles/livraison.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+{{ form_start(form) }}
+<h1>Ajouter Livraison</h1>
+<table>
+
+{#    <tr>{{ form_errors(form.idlivreur) }}#}
+{#        <td>{{ form_label(form.idlivreur,"Livreur") }}</td>#}
+{#        <td>{{ form_widget(form.idlivreur) }}</td></tr>#}
+
+    <tr>{{ form_errors(form.idcommande) }}
+        <td>{{ form_label(form.idcommande,"livraison pour:") }}</td>
+        <td>{{ form_widget(form.idcommande) }}</td></tr>
+
+{#    <tr>{{ form_errors(form.idpayment) }}#}
+{#        <td>{{ form_label(form.idpayment,"id payment") }}</td>#}
+{#        <td>{{ form_widget(form.idpayment) }}</td></tr>#}
+
+
+    <tr>{{ form_errors(form.etatlivraison) }}
+        <td>{{ form_label(form.etatlivraison,"etat livraison") }}</td>
+        <td>{{ form_widget(form.etatlivraison)}}</td></tr>
+
+    <tr>{{ form_errors(form.datelivraison) }}
+        <td>{{ form_label(form.datelivraison,"date livraison") }}</td>
+        <td>{{ form_widget(form.datelivraison)}}</td></tr>
+
+    {{ form_end(form) }}
+
+
+    {# {{ form_start(form) }}
+{{ form_widget(form) }}
+<button >Ajouter</button>
+{{ form_end (form)}} #}
+</table>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: #5eb5e0;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Liste des Classrooms</h1>
+<table border="1">
+    <tr>
+        <th>ID Livraison</th>
+        <th>ID Payment</th>
+        <th>Etat de Livraison</th>
+        <th>Date de Livraison</th>
+        <th>Id Livreur</th>
+    </tr>
+    <tr {% for l in livraison %}>
+
+        <td>{{ l.idLivraison}}</td>
+        <td>{{ l.idpayment }}</td>
+        <td>{{ l.etatlivraison }}</td>
+        <td>{{ l.datelivraison }}</td>
+         <td>{{ l.idlivreur }}</td>
+        <td></td>
+
+        <td>
+            <a href="{{ path('supp',{'id':l.idLivraison}) }}">Delete</a>
+            <a href="{{ path('update',{'id':l.idLivraison}) }}">Update</a>
+        </td>
+
+    </tr {% endfor %}>
+</table>
+
+<form action="{{ path('add')}}">
+    <button>Ajouter Livraison</button></form>
+
+</body>
+</html>
