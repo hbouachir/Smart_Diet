@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserApp index{% endblock %}
+
+{% block body %}
+    <h1>UserApp index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Password</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user_app in user_apps %}
+            <tr>
+                <td>{{ user_app.id }}</td>
+                <td>{{ user_app.email }}</td>
+                <td>{{ user_app.roles ? user_app.roles|json_encode : '' }}</td>
+                <td>{{ user_app.password }}</td>
+                <td>
+                    <a href="{{ path('user_app_show', {'id': user_app.id}) }}">show</a>
+                    <a href="{{ path('user_app_edit', {'id': user_app.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_app_new') }}">Create new</a>
+{% endblock %}

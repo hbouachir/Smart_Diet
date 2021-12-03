@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit index{% endblock %}
+
+{% block body %}
+    <h1>Produit index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Categorie</th>
+                <th>Prix</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.nom }}</td>
+                <td>{{ produit.description }}</td>
+                <td>{{ produit.categorie }}</td>
+                <td>{{ produit.prix }}</td>
+                <td>{{ produit.image }}</td>
+                <td>
+                    <a href="{{ path('produit_show', {'id': produit.id}) }}"><i class="bx bxs-happy-heart-eyes"></i> show</a>
+                    <a href="{{ path('produit_edit', {'id': produit.id}) }}"><i class="bx bxs-paint"></i>edit</a>
+                    <a href="{{ path('cart_add',{'id':produit.id}) }}"
+                       class="add-to-cart-btn"><i class="bx bxs-cart"></i>
+                        Panier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('produit_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,362 @@
+{% extends 'base.html.twig' %}
+{% set totalHT = 0.000 %}
+{% set totalTTC = 0.000 %}
+{% set refTva = {} %}
+
+
+{% block body %}
+    <head>
+        <link type="text/css" rel="stylesheet" href="../front/css/BELstyle.css"/>
+
+        <link rel="stylesheet"
+              href="{{ asset('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('https://use.fontawesome.com/releases/v5.8.1/css/all.css	') }}">
+        <script src="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js') }}"></script>
+
+    </head>
+{% block stylesheet %}
+    <style>
+        .nav-pills .nav-link.active .nav-pills .show>.nav-link {
+            background-color: red;
+        }
+
+    </style>
+{% endblock %}
+    <section id="contrat">
+        <div class="Assistance container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-9 col-11 ">
+
+                    <div class="card">
+                        <h5 style="color:#c71585 ">Etape 1: Confirmation de commande</h5>
+                        <div class="row d-flex align-items-center justify-content-center h-100">
+                            <div class="col-md-12 col-lg-12 col-xl-12">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Produit</th>
+                                        <th>Nom</th>
+                                        <th>Prix</th>
+                                        <th>Quantite</th>
+                                        <th>Total</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for produit in produits %}
+                                        <tr>
+                                            <td><img style="height: 50px;width: 50px" class="img-fluid"
+                                                     src=""
+                                                     alt=""/></td>
+                                            <td>{{ produit.produit.nom }}</td>
+                                            <td>{{ produit.produit.categorie }}</td>
+
+                                            <td id="prix">{{ produit.produit.prix }}</td>
+                                            <td>
+                                                {{ produit.quantite }}
+                                            </td>
+
+                                            <td style="font-weight: bold;">{{ produit.quantite * produit.produit.prix }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    <tr>
+                                        <td colspan="5" class="text-right" style="font-weight:bold">Timbre Fiscal :
+                                        </td>
+                                        <td style="font-weight: bold;">0.600 DT</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5" class="text-right"><strong>Total :</strong></td>
+                                        {% set total = total + 0.600 %}
+                                        <td style="color:red;font-weight: bold;">{{ total }} DT</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 style="color:#c71585 ">Etape 2: Mode de livraison</h5>
+                        <div class="row d-flex align-items-center justify-content-center h-100">
+                            <div class="col-md-12 col-lg-12 col-xl-12">
+                                <table id="livraisonAg" width="100%">
+                                    <tr id="magasin">
+                                        <td width="50%"><input type="radio" name="model" value="magasin" id="magasinc"> Retrait chez nous(<b>Sans frais</b>)<br> <span style="margin-left: 32px; line-height: 30px;"> Veuillez s&eacute;l&eacute;ctionner  l'agence</span>
+                                        </td>
+                                        <td>
+                                            <select name="agencep" style="width:150px">
+
+                                                    <option value="1">Tunis</option>
+                                                    <option value="2">nabeul</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr id="transp">
+                                        <td width="60%">
+                                            <input type="radio" name="model" id="aramex" value="aramex"> Livraison porte
+                                            &aacute porte par le transporteur Aramex
+                                            <p style="color:#c71585; font-weight: bold;">Livraison gratuite sur toute la
+                                                Tunisie &agrave; partir de 200 Dinars</p>
+                                            <p style="color: #c71585; font-weight: bold;">Vous recevrez votre commande en 72h
+                                                (hors jours ouvrables ) </p>
+                                        </td>
+                                        <td><img src="https://website-assets-fs.freshworks.com/attachments/cju400zag0075uwg0fd40ms1s-aramex-courier-guwahati.full.jpg"
+                                                 width="150" height="100"></td>
+                                    </tr>
+
+                                </table>
+                                <hr style="color:#8a6d3b"/>
+                                <div id="adr">
+
+                                    <h3 style="color:#8a6d3b;font-size:16px;font-weight:bold">Adresse de livraison </h3>
+
+                                </div>
+                                <hr style="color:#8a6d3b"/>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h5 style="color:#c71585 ">Etape 3 : Mode de paiement</h5>
+                        <div class="row d-flex align-items-center justify-content-center h-100">
+                            <div class="col-md-12 col-lg-12 col-xl-12">
+                                <div class="form-outline mb-6">
+                                    <div class="form-check form-check-inline ">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                               id="carteB" checked>
+
+                                        <label class="form-check-label" for="carteB">
+                                            Paiement par carte Bancaire
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                               id="agence">
+                                        <label class="form-check-label" for="agence">
+                                            Paiement chez nous
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <div id="agenceBlock">
+                                    <div class="row">
+                                        <p>Veuillez séléctionner l'agence : &nbsp; </p>
+                                        <select name="agencep" style="width:150px">
+                                            <option value="1">Tunis</option>
+                                            <option value="2">nabeul</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="carteBlock">
+                                    <div class="container py-5">
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+
+                                                <div class="card-header">
+                                                    <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                                                        <!-- Credit card form tabs -->
+                                                        <ul role="tablist"
+                                                            class="nav bg-light nav-pills rounded nav-fill mb-3">
+                                                            <li class="nav-item"><a data-toggle="pill"
+                                                                                    href="#credit-card"
+                                                                                    class="nav-link active "> <i
+                                                                            class="fas fa-credit-card mr-2"></i> Credit
+                                                                    Card </a></li>
+                                                            <li class="nav-item"><a data-toggle="pill" href="#paypal"
+                                                                                    class="nav-link "> <i
+                                                                            class="fab fa-paypal mr-2"></i> Paypal </a>
+                                                            </li>
+                                                            <li class="nav-item"><a data-toggle="pill"
+                                                                                    href="#net-banking"
+                                                                                    class="nav-link "> <i
+                                                                            class="fas fa-mobile-alt mr-2"></i> Net
+                                                                    Banking </a></li>
+                                                        </ul>
+                                                    </div> <!-- End -->
+                                                    <!-- Credit card form content -->
+                                                    <div class="tab-content">
+                                                        <!-- credit card info-->
+                                                        <div id="credit-card" class="tab-pane fade show active pt-3">
+                                                            <form role="form" onsubmit="event.preventDefault()">
+                                                                <div class="form-group">
+                                                                    <label for="username">
+                                                                        <h6>Card Owner</h6>
+                                                                    </label>
+                                                                    <input type="text" name="username"
+                                                                           placeholder="Card Owner Name"
+                                                                           required
+                                                                           class="form-control ">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="cardNumber">
+                                                                        <h6>Card number</h6>
+                                                                    </label>
+                                                                    <div class="input-group">
+                                                                        <input type="text"
+                                                                               name="cardNumber"
+                                                                               placeholder="Valid card number"
+                                                                               class="form-control "
+                                                                               required>
+                                                                        <div class="input-group-append">
+                                                                            <span
+                                                                                    class="input-group-text text-muted">
+                                                                                <img width="100px" height="30px"
+                                                                                     src="./front/images/ccvisa.png"/>
+                                                                                          </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-8">
+                                                                        <div class="form-group">
+                                                                            <label><span
+                                                                                        class="hidden-xs">
+                                                    <h6>Expiration Date</h6>
+
+                                                </span></label>
+                                                                            <div class="input-group"><input
+                                                                                        type="number" placeholder="MM"
+                                                                                        name=""
+                                                                                        class="form-control" required>
+                                                                                <input
+                                                                                        type="number" placeholder="YY"
+                                                                                        name="" class="form-control"
+                                                                                        required>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4">
+                                                                        <div class="form-group mb-4"><label
+                                                                                    data-toggle="tooltip"
+                                                                                    title="Three digit CV code on the back of your card">
+                                                                                <h6>CVV
+                                                                                    <i class="fa fa-question-circle d-inline"></i>
+                                                                                </h6>
+                                                                            </label> <input type="text" required
+                                                                                            class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-footer">
+                                                                    {#  <button type="button"
+                                                                            class="subscribe btn-block">
+                                                                      Confirmer paiement
+                                                                    </button>  #}
+                                                                    <a href="{{ path('commandeConfirmer') }}" type="button"
+                                                                            class=" btn subscribe btn-block">
+                                                                      Confirmer paiement
+                                                                    </a>
+
+                                                                </div>
+                                                            </form>
+                                                        </div> <!-- End -->
+                                                        <!-- Paypal info -->
+                                                        <div id="paypal" class="tab-pane fade pt-3">
+                                                            <h6 class="pb-2">Select your paypal account type</h6>
+                                                            <div class="form-group "><label class="radio-inline"> <input
+                                                                            type="radio" name="optradio"
+                                                                            checked> Domestic </label> <label
+                                                                        class="radio-inline"> <input type="radio"
+                                                                                                     name="optradio"
+                                                                                                     class="ml-5">International
+                                                                </label></div>
+                                                            <p>
+                                                                <button type="button" class="btn btn-primary "><i
+                                                                            class="fab fa-paypal mr-2"></i> Log into
+                                                                    my Paypal
+                                                                </button>
+                                                            </p>
+                                                            <p class="text-muted"> Note: After clicking on the button,
+                                                                you will be directed to a secure
+                                                                gateway for payment. After completing the payment
+                                                                process, you will be redirected back to
+                                                                the website to view details of your order. </p>
+                                                        </div> <!-- End -->
+                                                        <!-- bank transfer info -->
+                                                        <div id="net-banking" class="tab-pane fade pt-3">
+                                                            <div class="form-group "><label for="Select Your Bank">
+                                                                    <h6>Select your Bank</h6>
+                                                                </label> <select class="form-control" id="ccmonth">
+                                                                    <option value="" selected disabled>--Please select
+                                                                        your Bank--
+                                                                    </option>
+                                                                    <option>Bank 1</option>
+                                                                    <option>Bank 2</option>
+                                                                    <option>Bank 3</option>
+                                                                    <option>Bank 4</option>
+                                                                    <option>Bank 5</option>
+                                                                    <option>Bank 6</option>
+                                                                    <option>Bank 7</option>
+                                                                    <option>Bank 8</option>
+                                                                    <option>Bank 9</option>
+                                                                    <option>Bank 10</option>
+                                                                </select></div>
+                                                            <div class="form-group">
+                                                                <p>
+                                                                    <button type="button" class="btn btn-primary "><i
+                                                                                class="fas fa-mobile-alt mr-2"></i>
+                                                                        Proceed Payment
+                                                                    </button>
+                                                                </p>
+                                                            </div>
+                                                            <p class="text-muted">Note: After clicking on the button,
+                                                                you will be directed to a secure
+                                                                gateway for payment. After completing the payment
+                                                                process, you will be redirected back to
+                                                                the website to view details of your order. </p>
+                                                        </div> <!-- End -->
+                                                        <!-- End -->
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" id="condition">
+                            <a href="#"> J'ai lu et approuvé les Termes & Conditions de vente </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+
+        v1 = document.getElementById('agence');
+        v2 = document.getElementById('carteB');
+        v3 = document.getElementById('aramex');
+        document.getElementById("agenceBlock").hidden = true;
+
+        // handle button click
+        v1.onclick = function () {
+
+            document.getElementById("agenceBlock").hidden = false;
+            document.getElementById("carteBlock").hidden = true;
+        }
+
+
+        v2.onclick = function () {
+
+            document.getElementById("agenceBlock").hidden = true;
+            document.getElementById("carteBlock").hidden = false;
+        }
+        v3.onclick = function () {
+
+            document.getElementById("agence").hidden = hidden;
+        }
+
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+{% endblock %}

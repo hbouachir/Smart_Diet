@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="zxx">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap Min CSS -->
+    <link rel="stylesheet" href="{{ asset('front/css/bootstrap.min.css') }}">
+    <!-- Owl Theme Default Min CSS -->
+    <link rel="stylesheet" href="{{ asset('front/css/owl.theme.default.min.css') }}">
+    <!-- Owl Carousel Min CSS -->
+    <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.min.css') }}">
+    <!-- Boxicons Min CSS -->
+    <link rel="stylesheet" href="{{ asset('front/css/boxicons.min.css') }}">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="{{ asset('front/css/flaticon.css') }}">
+    <!-- Meanmenu Min CSS -->
+    <link rel="stylesheet" href="{{ asset('front/css/meanmenu.min.css') }}">
+    <!-- Animate Min CSS -->
+    <link rel="stylesheet" href="{{ asset('front/css/animate.min.css') }}">
+    <!-- Nice Select Min CSS -->
+    <link rel="stylesheet" href="{{ asset('front/css/nice-select.min.css') }}">
+    <!-- Date Picker CSS-->
+    <link rel="stylesheet" href="{{ asset('front/css/date-picker.min.css') }}">
+    <!-- Magnific Popup Min CSS -->
+    <link rel="stylesheet" href="{{ asset('front/css/magnific-popup.min.css') }}">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('ffront/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css') }}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ asset('front/css/responsive.css') }}">
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{asset('front/images/favicon.png')}}">
+    <!-- Title -->
+    <title>{% block title %}Aava - Diet & Nutrition Health Center HTML Template{% endblock %}</title>
+</head>
+
+<body>
+<!-- Start Preloader Area -->
+<div class="preloader">
+    <div class="lds-ripple">
+        <span class="loader-inner-1"></span>
+        <span class="loader-inner-2"></span>
+        <span class="loader-inner-3"></span>
+        <span class="loader-inner-4"></span>
+    </div>
+</div>
+<!-- End Preloader Area -->
+
+<!-- Start Header Area -->
+<header class="header-area">
+    <!-- Start Top Header -->
+    <div class="top-header top-header-style-two">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="header-left-content">
+                        <ul class="contact-info">
+                            <li>
+                                <i class="bx bx-phone-call"></i>
+                                <a href="tel:+1-(514)-312-5678">+1 (514) 312-5678</a>
+                            </li>
+                        </ul>
+
+                        <ul class="social-icon">
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <i class="bx bxl-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/" target="_blank">
+                                    <i class="bx bxl-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/" target="_blank">
+                                    <i class="bx bxl-linkedin-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/" target="_blank">
+                                    <i class="bx bxl-twitter"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="header-right-content">
+                        <div class="language">
+                            <div class="dropdown language-settings">
+                                <button class="dropdown-toggle language-btn" type="button" data-bs-toggle="dropdown">
+                                    Language
+                                    <i class="bx bx-chevron-down"></i>
+                                    <span class="bx bx-world"></span>
+                                </button>
+
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">
+                                        <img src="assets/images/language/english.png" alt="Flag">
+                                        <span>English</span>
+                                    </a>
+
+                                    <a href="#" class="dropdown-item">
+                                        <img src="assets/images/language/arab.png" alt="Flag">
+                                        <span>العربيّة</span>
+                                    </a>
+
+                                    <a href="#" class="dropdown-item">
+                                        <img src="assets/images/language/germany.png" alt="Flag">
+                                        <span>Germany</span>
+                                    </a>
+
+                                    <a href="#" class="dropdown-item">
+                                        <img src="assets/images/language/portugues.png" alt="Flag">
+                                        <span>Português</span>
+                                    </a>
+
+                                    <a href="#" class="dropdown-item">
+                                        <img src="assets/images/language/china.png" alt="Flag">
+                                        <span>简体中文</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="my-account">
+                            <li>
+                                <a href="{{ path('app_login') }}">
+                                    <i class="bx bxs-user"></i>
+                                    {% if app.user %}
+                                        {{ app.user.username }}
+                                    {% else %}
+                                        Account
+                                    {% endif %}
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="{{ path('cart_index') }}" class="basket">
+                                    <i class='bx bxs-cart-alt'></i>
+                                    Basket
+                                    <span>{{ app.session.get('totalqte') }}</span>
+                                </a>
+                            </li>
+                            {% if app.user %}
+                                <li>
+                                    <a href="{{ path('app_logout') }}">
+                                        <i style="color: red" class="bx bx-power-off"></i>
+
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start Top Header -->
+
+    <!-- Start Navbar Area -->
+    <div class="navbar-area navbar-area-style-three">
+        <div class="mobile-nav">
+            <div class="container">
+                <div class="mobile-menu">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="assets/images/logo.png" alt="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="desktop-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/images/logo.png" alt="logo">
+                    </a>
+
+                    <div class="collapse navbar-collapse mean-menu">
+                        <ul class="navbar-nav m-auto">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    Home
+                                    <i class="bx bx-chevron-down"></i>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="index.html" class="nav-link">Home One</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="index-2.html" class="nav-link">Home Two</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="index-3.html" class="nav-link">Home Three</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    Pages
+                                    <i class="bx bx-chevron-down"></i>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="about-us.html" class="nav-link">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            Portfolio
+                                            <i class="bx bx-chevron-down"></i>
+                                        </a>
+
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a href="portfolio-column-two.html" class="nav-link">Portfolio Column
+                                                    Two</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="portfolio-column-three.html" class="nav-link">Portfolio Column
+                                                    Three</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="portfolio-column-four.html" class="nav-link">Portfolio Column
+                                                    Four</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="pricing.html" class="nav-link">Pricing</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="faq.html" class="nav-link">FAQ</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="terms-conditions.html" class="nav-link">Terms & Conditions</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            User
+                                            <i class="bx bx-chevron-down"></i>
+                                        </a>
+
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item">
+                                                <a href="my-account.html" class="nav-link">My Account</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="log-in.html" class="nav-link">Log In</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="register.html" class="nav-link">Register</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="recover-password.html" class="nav-link">Recover Password</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="our-experts.html" class="nav-link">Our Experts</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="partner-details.html" class="nav-link">Partner Details</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="appointment.html" class="nav-link">Appointment</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="coming-soon.html" class="nav-link">Coming Soon</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="404.html" class="nav-link">404 Error Page</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    Services
+                                    <i class="bx bx-chevron-down"></i>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="services.html" class="nav-link">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="services-details.html" class="nav-link">Services Details</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link ">
+                                    Shop
+                                    <i class="bx bx-chevron-down"></i>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="{{ path('produit_index') }}" class="nav-link">Products</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="wishlist.html" class="nav-link">Wishlist</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="shopping-cart.html" class="nav-link ">Shopping cart</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="checkout.html" class="nav-link">Checkout</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="product-details.html" class="nav-link">Product Details</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link active">
+                                    News
+                                    <i class="bx bx-chevron-down"></i>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="news.html" class="nav-link">News</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ path('experience_new') }}" class="nav-link">Donner son avis</a>
+                                    </li>
+                                    <li class="nav-active">
+                                        <a href="{{ path('experience_index') }}" class="nav-link active">Retour d'expérience</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="contact-us.html" class="nav-link">Contact Us</a>
+                            </li>
+                        </ul>
+
+                        <div class="others-option">
+                            <div class="option-item">
+                                <i class="search-btn bx bx-search"></i>
+                                <i class="close-btn bx bx-x"></i>
+
+                                <div class="search-overlay search-popup">
+                                    <div class='search-box'>
+                                        <form class="search-form">
+                                            <input class="search-input" name="search" placeholder="Search" type="text">
+
+                                            <button class="search-button" type="submit">
+                                                <i class="bx bx-search"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="get-quote">
+                                <a href="appointment.html" class="default-btn">
+                                    Get Appointment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="others-option-for-responsive">
+            <div class="container">
+                <div class="dot-menu">
+                    <div class="inner">
+                        <div class="circle circle-one"></div>
+                        <div class="circle circle-two"></div>
+                        <div class="circle circle-three"></div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="option-inner">
+                        <div class="others-option justify-content-center d-flex align-items-center">
+                            <div class="option-item">
+                                <i class="search-btn bx bx-search"></i>
+                                <i class="close-btn bx bx-x"></i>
+
+                                <div class="search-overlay search-popup">
+                                    <div class='search-box'>
+                                        <form class="search-form">
+                                            <input class="search-input" name="search" placeholder="Search" type="text">
+
+                                            <button class="search-button" type="submit">
+                                                <i class="bx bx-search"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="get-quote">
+                                <a href="appointment.html" class="default-btn">
+                                    Get Appointment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Navbar Area -->
+</header>
+<!-- End Header Area -->
+
+{% block body %}
+    <!-- Start Page Title Area -->
+    <div class="page-title-area bg-15">
+        <div class="container">
+            <div class="page-title-content">
+                <h2>Products</h2>
+
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>Shop</li>
+
+                    <li class="active">Products</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title Area -->
+
+
+    <!-- Start Shopping Cart Area -->
+    <section class="shopping-cart-area ptb-100">
+
+        <div class="container">
+            <form class="cart-controller">
+                <div class="cart-table table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col">Trash</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Product name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td class="trash">
+                                <a href="#" class="remove">
+                                    <i class="bx bx-trash"></i>
+                                </a>
+                            </td>
+
+                            <td class="product-thumbnail">
+                                <a href="product-details.html">
+                                    <img src="assets/images/shopping-cart/shopping-cart-1.jpg" alt="Image">
+                                </a>
+                            </td>
+
+                            <td class="product-name">
+                                <a href="product-details.html">Pitahaya Dragon</a>
+                            </td>
+
+                            <td class="product-price">
+                                <span class="unit-amount">$50.00</span>
+                            </td>
+
+                            <td class="product-quantity">
+                                <div class="input-counter">
+											<span class="minus-btn">
+												<i class="bx bx-minus"></i>
+											</span>
+
+                                    <input type="text" value="1">
+
+                                    <span class="plus-btn">
+												<i class="bx bx-plus"></i>
+											</span>
+                                </div>
+                            </td>
+
+                            <td class="product-subtotal">
+                                <span class="subtotal-amount">$50.00</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="trash">
+                                <a href="#" class="remove">
+                                    <i class="bx bx-trash"></i>
+                                </a>
+                            </td>
+
+                            <td class="product-thumbnail">
+                                <a href="product-details.html">
+                                    <img src="assets/images/shopping-cart/shopping-cart-2.jpg" alt="Image">
+                                </a>
+                            </td>
+
+                            <td class="product-name">
+                                <a href="product-details.html">Cabbage</a>
+                            </td>
+
+                            <td class="product-price">
+                                <span class="unit-amount">$20.00</span>
+                            </td>
+
+                            <td class="product-quantity">
+                                <div class="input-counter">
+											<span class="minus-btn">
+												<i class="bx bx-minus"></i>
+											</span>
+
+                                    <input type="text" value="1">
+
+                                    <span class="plus-btn">
+												<i class="bx bx-plus"></i>
+											</span>
+                                </div>
+                            </td>
+
+                            <td class="product-subtotal">
+                                <span class="subtotal-amount">$20.00</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="trash">
+                                <a href="#" class="remove">
+                                    <i class="bx bx-trash"></i>
+                                </a>
+                            </td>
+
+                            <td class="product-thumbnail">
+                                <a href="product-details.html">
+                                    <img src="assets/images/shopping-cart/shopping-cart-3.jpg" alt="Image">
+                                </a>
+                            </td>
+
+                            <td class="product-name">
+                                <a href="product-details.html">Blackberries</a>
+                            </td>
+
+                            <td class="product-price">
+                                <span class="unit-amount">$100.00</span>
+                            </td>
+
+                            <td class="product-quantity">
+                                <div class="input-counter">
+											<span class="minus-btn">
+												<i class="bx bx-minus"></i>
+											</span>
+
+                                    <input type="text" value="1">
+
+                                    <span class="plus-btn">
+												<i class="bx bx-plus"></i>
+											</span>
+                                </div>
+                            </td>
+
+                            <td class="product-subtotal">
+                                <span class="subtotal-amount">$100.00</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="trash">
+                                <a href="#" class="remove">
+                                    <i class="bx bx-trash"></i>
+                                </a>
+                            </td>
+
+                            <td class="product-thumbnail">
+                                <a href="product-details.html">
+                                    <img src="assets/images/shopping-cart/shopping-cart-4.jpg" alt="Image">
+                                </a>
+                            </td>
+
+                            <td class="product-name">
+                                <a href="product-details.html">Strawberry</a>
+                            </td>
+
+                            <td class="product-price">
+                                <span class="unit-amount">$40.00</span>
+                            </td>
+
+                            <td class="product-quantity">
+                                <div class="input-counter">
+											<span class="minus-btn">
+												<i class="bx bx-minus"></i>
+											</span>
+
+                                    <input type="text" value="1">
+
+                                    <span class="plus-btn">
+												<i class="bx bx-plus"></i>
+											</span>
+                                </div>
+                            </td>
+
+                            <td class="product-subtotal">
+                                <span class="subtotal-amount">$40.00</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="trash">
+                                <a href="#" class="remove">
+                                    <i class="bx bx-trash"></i>
+                                </a>
+                            </td>
+
+                            <td class="product-thumbnail">
+                                <a href="product-details.html">
+                                    <img src="assets/images/shopping-cart/shopping-cart-5.jpg" alt="Image">
+                                </a>
+                            </td>
+
+                            <td class="product-name">
+                                <a href="product-details.html">Bell Pepper</a>
+                            </td>
+
+                            <td class="product-price">
+                                <span class="unit-amount">$30.00</span>
+                            </td>
+
+                            <td class="product-quantity">
+                                <div class="input-counter">
+											<span class="minus-btn">
+												<i class="bx bx-minus"></i>
+											</span>
+
+                                    <input type="text" value="1">
+
+                                    <span class="plus-btn">
+												<i class="bx bx-plus"></i>
+											</span>
+                                </div>
+                            </td>
+
+                            <td class="product-subtotal">
+                                <span class="subtotal-amount">$30.00</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="coupon-cart">
+                    <div class="row">
+                        <div class="col-lg-8 col-sm-7">
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control" placeholder="Coupon code">
+                                <a href="#" class="default-btn">
+                                    Apply Coupon
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-5">
+                            <a href="#" class="default-btn update-cart">
+                                <span>Update Cart</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="cart-totals">
+                <h3 class="cart-checkout-title">Checkout Summary</h3>
+
+                <ul>
+                    <li>Subtotal <span>$240.00</span></li>
+                    <li>Shipping <span>$00.00</span></li>
+                    <li>Total <span>$240.00</span></li>
+                    <li><b>Payable Total</b> <span><b>$240.00</b></span></li>
+                </ul>
+
+                <a href="checkout.html" class="default-btn">
+                    <span>Proceed to checkout</span>
+                </a>
+            </div>
+        </div>
+
+    </section>
+    <!-- End Shopping Cart Area -->
+{% endblock %}
+<!-- Start Footer Area -->
+<footer class="footer-area pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="single-footer-widget">
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/white-logo.png" alt="Image">
+                    </a>
+
+                    <ul class="open-close">
+                        <li>
+                            <span>Opening Hours:</span>
+                        </li>
+                        <li>
+                            Monday: 8:00 AM - 8:00 PM
+                        </li>
+                        <li>
+                            Saturday: 10:00 AM - 8:00 PM
+                        </li>
+                        <li>
+                            Sunday: Closed
+                        </li>
+                    </ul>
+
+                    <ul class="social-icon">
+                        <li>
+                            <span>Follow Us:</span>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <i class="bx bxl-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/" target="_blank">
+                                <i class="bx bxl-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/" target="_blank">
+                                <i class="bx bxl-linkedin-square"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank">
+                                <i class="bx bxl-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="single-footer-widget">
+                    <h3>Contact Us</h3>
+
+                    <ul class="address">
+                        <li class="location">
+                            <i class="bx bx-location-plus"></i>
+                            1424 Bridge Avenue Franklin, LA 70538
+                        </li>
+                        <li>
+                            <i class="bx bx-envelope"></i>
+                            <a href="mailto:hello@aava.com">hello@aava.com</a>
+                            <a href="mailto:info@aava.com">info@aava.com</a>
+                        </li>
+                        <li>
+                            <i class="bx bx-phone"></i>
+                            <a href="tel:+1-(337)-829-7799">+1 (337)-829-7799</a>
+                            <a href="tel:+1-(337)-829-7788">+1 (337)-829-7788</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="single-footer-widget">
+                    <h3>Quick Links</h3>
+
+                    <ul class="import-link">
+                        <li>
+                            <a href="our-experts.html">Our Experts</a>
+                        </li>
+                        <li>
+                            <a href="contact-us.html">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="faq.html">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="terms-conditions.html">Terms of Use</a>
+                        </li>
+                        <li>
+                            <a href="privacy-policy.html">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="single-footer-widget">
+                    <h3>Newsletter</h3>
+                    <p>Sign up to get new exclusive offers from our latest news.</p>
+
+                    <form class="newsletter-form" data-toggle="validator">
+                        <input type="email" class="form-control" placeholder="Your email address" name="EMAIL" required
+                               autocomplete="off">
+
+                        <button class="default-btn" type="submit">
+                            Subscribe Now
+                        </button>
+
+                        <div id="validator-newsletter" class="form-result"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer Area -->
+
+<!-- Start Copy Right Area -->
+<div class="copy-right-area">
+    <div class="container">
+        <p>
+            Copyright @2020 Aava. Designed By
+            <a href="https://envytheme.com/" target="_blank">EnvyTheme</a>
+        </p>
+    </div>
+</div>
+<!-- End Copy Right Area -->
+
+<!-- Start Go Top Area -->
+<div class="go-top">
+    <i class="bx bx-chevrons-up"></i>
+    <i class="bx bx-chevrons-up"></i>
+</div>
+<!-- End Go Top Area -->
+
+
+<!-- Jquery Min JS -->
+<!-- Jquery Min JS -->
+<script src="{{ asset('front/js/jquery.min.js') }}"></script>
+<!-- Bootstrap Bundle Min JS -->
+<script src="{{ asset('front/js/bootstrap.bundle.min.js') }}"></script>
+<!-- Meanmenu Min JS -->
+<script src="{{ asset('front/js/meanmenu.min.js') }}"></script>
+<!-- Owl Carousel Min JS -->
+<script src="{{ asset('front/js/owl.carousel.min.js') }}"></script>
+<!-- Wow Min JS -->
+<script src="{{ asset('front/js/wow.min.js') }}"></script>
+<!-- Nice Select Min JS -->
+<script src="{{ asset('front/js/nice-select.min.js') }}"></script>
+<!-- Magnific Popup Min JS -->
+<script src="{{ asset('front/js/magnific-popup.min.js') }}"></script>
+<!-- Mixitup Min JS -->
+<script src="{{ asset('front/js/mixitup.min.js') }}"></script>
+<!-- Datepicker Min JS -->
+<script src="{{ asset('front/js/bootstrap-datepicker.min.js') }}"></script>
+<!-- Form Validator Min JS -->
+<script src="{{ asset('front/js/form-validator.min.js') }}"></script>
+<!-- Contact JS -->
+<script src="{{ asset('front/js/contact-form-script.js') }}"></script>
+<!-- Ajaxchimp Min JS -->
+<script src="{{ asset('front/js/ajaxchimp.min.js') }}"></script>
+<!-- Custom JS -->
+<script src="{{ asset('front/js/custom.js') }}"></script>
+<script src="{{ asset('front/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js') }}"></script>
+
+</body>
+</html>

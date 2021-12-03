@@ -1,0 +1,490 @@
+{% extends 'base2.html.twig' %}
+{% block body %}
+    <head>
+        <link type="text/css" rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../assets/css/BELstyle.css"/>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    </head>
+    <!-- HEADER -->
+    <!-- SECTION 1-->
+    <!--Promos -->
+    <div class="section" style=" padding-top: 30px;">
+        <div class="col-md-12">
+            <div class="Boutique-section-title">
+                <h3 class="title">Nos promos</h3>
+            </div>
+        </div>
+        <br>
+        <!-- container -->
+        <div id="hot-deal" class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="hot-deal">
+                            <ul class="hot-deal-countdown">
+                                <li>
+                                    <div>
+                                        <h3>02</h3>
+                                        <span>Days</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>10</h3>
+                                        <span>Hours</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>34</h3>
+                                        <span>Mins</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <h3>60</h3>
+                                        <span>Secs</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <h2 class="text-uppercase">hot deal this week</h2>
+                            <p>New Collection Up to 50% OFF</p>
+                            <button class="primary-btn cta-btn">Shop now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /container -->
+    </div>
+    <div class="section">
+        <!-- container -->
+        <div class="container-fluid">
+            <!-- row -->
+            <div class="row">
+                <!-- /menu -->
+                <nav class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="sBoutique-section-title">
+                        <h3 class="title">Nos produits</h3>
+                    </div>
+                    {# <header id="header-1" class="header">
+                        <nav class="header-nav">
+                            <div class="search-button">
+                                <a href="#" class="search-toggle" data-selector="#header-1"></a>
+                            </div>
+                            <ul class="menu">
+                                <li><a href="#">For Business</a></li>
+                                <li><a href="#">For Personal</a></li>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                            <form action="" class="search-box">
+                                <input type="text" class="text search-input" placeholder="Type here to search..." />
+                            </form>
+                        </nav>
+                    </header> #}
+
+
+                    <nav class="navbar navigation">
+                        <div id="navbar" class="navbar-collapse collapse text-center">
+                            <div class="search-button">
+                                <a href="#" class="search-toggle" data-selector="#header-1"></a>
+                            </div>
+
+                            <ul class="nav navbar-nav">
+                                {% for gamme in gammes %}
+                                    <li class="dropdown dropdown-slide">
+                                        <a href="#!" class="dropdown-toggle" data-toggle="dropdown"
+                                           data-hover="dropdown"
+                                           data-delay="350"
+                                           role="button" aria-haspopup="true"
+                                           aria-expanded="false">{{ gamme.designation }}
+                                            <span
+                                                    class="tf-ion-ios-arrow-down"></span></a>
+                                        <ul class="dropdown-menu">
+                                            {% for type in types %}
+                                                {% if type.gamme.id == gamme.id %}
+                                                    <li><a href="#"> {{ type.designation }} </a>
+                                                    </li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                {% endfor %}
+                                {# <li>
+                                    <div class="menu-item">
+                                        <div class="BELheader-search">
+                                            <form>
+                                                <button class="search-btn"><i class="bx bx-search"></i></button>
+                                                <input id="mynput" type="search" class="input"
+                                                       aria-label="Search through site content"
+                                                       placeholder="Chercher ici...">
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li> #}
+                            </ul>
+                            <form class="form-card search-box" method="post" action="{{ path('boutiqueEnLigne') }}">
+                                <input name="chercher" id="searchinput" type="text" class="text search-input"
+                                       placeholder="Type here to search..."/>
+                                <div id="suggestions"></div>
+                            </form>
+                        </div>
+
+                    </nav>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!------------------------------------------------------------- filter -->
+        <div class="left-blog col-lg-2 col-md-2 col-sm-6">
+            <div id="aside">
+                {{ form_start(form) }}
+
+                {{ form(form) }}
+
+                {{ form_end(form) }}
+                {#
+                <form action="{{ path('boutiqueEnLigne') }}" method="post">
+                <!-- aside Widget Marque-->
+                <div class="aside">
+                    <h3 class="aside-title">Marques</h3>
+
+                        <button type="submit" name="marque">test</button>
+                        <div class="checkbox-filter">
+                            {% set comp = 0 %}
+                                {% for marque in marques %}
+
+                                    {% set comp= comp+1 %}
+                                    <div class="input-checkbox">
+
+                                    <input name="marqueCH[]" type="checkbox" id="{{ "category-"~comp }}"
+                                            >
+                                    <label for="{{ "category-"~comp }}">
+                                        <span></span>
+                                        {{ marque.nom }}
+                                        <small></small>
+                                    </label>
+                                    </div>
+
+                            {% endfor %}
+                        </div>
+
+                </div>
+                <!-- /aside Widget Marque-->
+                <!-- aside Widget prix-->
+                <div class="aside">
+                    <h3 class="aside-title">Prix</h3>
+                    <div class="price-filter">
+                        <div id="price-slider">
+
+                        </div>
+                        <div class="input-number price-min">
+                            <input id="price-min" type="number">
+                            <span class="qty-up">+</span>
+                            <span class="qty-down">-</span>
+                        </div>
+                        <span>-</span>
+                        <div class="input-number price-max">
+                            <input id="price-max" type="number">
+                            <span class="qty-up">+</span>
+                            <span class="qty-down">-</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /aside Widget prix-->
+                <!-- aside Widget couleur-->
+                <div class="aside">
+                    <h3 class="aside-title">Couleurs</h3>
+                    <div class="checkbox-filter">
+                        {% set colorArray =[] %}
+                        {% set comp =0 %}
+                        {% for produit in pagination %}
+                            {% for couleur in couleurs %}
+                                {% if produit.couleur.id == couleur.id and produit.couleur.id not in colorArray %}
+                                    {% set colorArray = colorArray|merge([produit.couleur.id]) %}
+                                    {% set comp =comp+1 %}
+                                    <div class="input-checkbox">
+                                        <input name="couleurCH[]" type="checkbox" id="{{ "brand-"~comp }}" >
+                                        <label for="{{ "brand-"~comp }}">
+                                            <span></span>
+                                            {{ couleur.nom }}
+                                            <small>({{ comp }})</small>
+                                        </label>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- /aside Widget couleur-->
+                </form>
+                <!-- aside Widget top selling-->
+                <div class="aside">
+                    <h3 class="aside-title">Top selling</h3>
+                    <div class="product-widget">
+                        <div class="product-img">
+                            <img src="./assets/img/product01.png" alt="">
+                        </div>
+                        <div class="product-body">
+                            <p class="product-category">Category</p>
+                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                            <h4 class="product-price">$980.00
+                                <del class="product-old-price">$990.00</del>
+                            </h4>
+                        </div>
+                    </div>
+
+                    <div class="product-widget">
+                        <div class="product-img">
+                            <img src="./assets/img/product02.png" alt="">
+                        </div>
+                        <div class="product-body">
+                            <p class="product-category">Category</p>
+                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                            <h4 class="product-price">$980.00
+                                <del class="product-old-price">$990.00</del>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- /aside Widget top selling-->
+                #}
+            </div>
+        </div>
+        <!------------------------------------------------------------- endfilter -->
+        <!------------------------------------------------------------- product -->
+        <div class="col-lg-10 col-md-10 col-sm-6">
+            <div class="category-search-filter">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form action="{{ path('boutiqueEnLigne') }}" method="post" id="myForm">
+                            <label for="selectPrductSort1"> <strong>Tri</strong></label>
+                            <select class="selectProductSort" id="selectPrductSort1" name="select"
+                                    onchange="myFunction()">
+                                <option selected="selected">
+                                    {% if tri is defined %} {{ tri }}  {% endif %}
+                                </option>
+                                <option value="price:asc">Le moins cher</option>
+                                <option value="price:desc">Le plus cher</option>
+                                <option value="name:asc">De A à Z</option>
+                                <option value="name:desc">De Z à A</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="view">
+                            <strong>Views</strong>
+                            {% set view='ttt' %}
+                            <ul class="list-inline view-switcher">
+                                <li id="grid" class="list-inline-item">
+                                    <a href="#" class="text-info"><i
+                                                class="fa fa-th-large"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a id="list" href="{{ path('boutiqueEnLigne') }}"
+                                       onclick="return myajax();"><i
+                                                class="fa fa-reorder"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="products" class="product-grid-list">
+                <div class="row mt-30">
+                    {% for produit in pagination %}
+                        <div class="item col-sm-12 col-lg-4 col-md-6">
+                            <div class="product">
+                                <figure class="wow portfolio-item">
+                                    <div class="product-img">
+                                        <div class="thumbnail">
+                                            {% for produitImage in produitImages %}
+                                                {% if  produitImage.produit.id ==  produit.id %}
+
+                                                    <img style="height: 220px;width: 200px" class="img-fluid"
+                                                         src="/uploads/images/{{ produitImage.path }}"
+                                                         alt=""/>
+                                                {% endif %}
+                                            {% endfor %}
+                                            <div class="overlay">
+                                                <div class="buttons">
+                                                    <a href="{{ path('cart_add',{'id':produit.id}) }}"
+                                                       class="add-to-cart-btn"><i class="bx bxs-cart"></i>
+                                                        Panier</a>
+
+                                                    <a href="{{ path('produitsingle', {'id':  produit.id }) }}"
+                                                       class="add-to-cart-btn"><i class="bx bx-show"></i> Détail</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+                                <div class="caption product-body">
+                                    <p class="product-category"> {{ produit.reference }}</p>
+                                    <h3 class="product-name list-group-item-heading">{{ produit.designation }}</h3>
+                                    <p class="product-category list-group-item-desc"> {{ produit.description }}</p>
+                                    <h4 class="product-price">{{ produit.prix }}
+                                        <del class="product-old-price">990.00 DT</del>
+                                    </h4>
+                                    <br>
+                                    {% for logo in marques %}
+                                        {% if  produit.marque.id ==  logo.id %}
+
+                                            <img class="list-group-item-text"
+                                                 src="/uploads/logo/{{ logo.logo }}"
+                                                 width=auto
+                                                 height="70" alt=""/>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="navigation">
+                {{ knp_pagination_render(pagination,'@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig'
+                ) }}
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------------------- endproduct -->
+
+    <!-- js -->
+    {% block javascripts %}
+        <script src="../assets/js/price.js"></script>
+
+        <script src="../assets/js/nouislider.min.js"></script>
+
+        <script>
+            $("#select-all-operators").click(function () {
+                $("#selectionOperators").find('input[type=checkbox]').each(function () {
+                    this.checked = false; //on décoche tous les opérateurs
+                });
+                //on enlève l'attribut 'selected' à l'élément html
+                $("select#operator option").removeAttr("selected");
+            });
+        </script>
+        <script>
+            function myFunction() {
+                document.getElementById("myForm").submit();
+            }
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('#products .list-group-item-desc').hide();
+                $('#products .list-group-item-text').hide();
+
+                $('#list').click(function (event) {
+                    event.preventDefault();
+                    $('#products .item').addClass('list-group-item');
+                    $('#products').removeClass('product-grid-list');
+
+                    $('#products .portfolio-item').addClass('col-sm-4 col-lg-4 col-md-4');
+                    $('#products .product-body').addClass('col-sm-5 col-lg-5 col-md-5');
+                    $('#products .list-group-item-desc').show();
+                    $('#products .list-group-item-text').show();
+                    $('#products .list-group-item .item').removeAttr("style");
+                });
+                $('#grid').click(function (event) {
+                    event.preventDefault();
+                    $('#products .item').removeClass('list-group-item');
+                    $('#products .item').addClass('grid-group-item');
+                    $('#products').addClass('product-grid-list');
+
+                    $('#products .list-group-item-text').hide();
+                    $('#products .list-group-item-desc').hide();
+                    $('#products .portfolio-item').removeClass('col-sm-4 col-lg-4 col-md-4');
+                    $('#products .product-body').removeClass('col-sm-5 col-lg-5 col-md-5');
+
+
+                });
+            });
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="/sliderengine/initslider-1.js"></script>
+        <!-- End of head section HTML codes -->
+        <script>
+            var f = jQuery.noConflict();
+
+            f(document).ready(function ($) {
+                // alert("coucou");
+
+                f('#search').keyup(function () {
+
+                    var search = f('#search').val();
+
+                    search = f.trim(search);
+
+//f('#res').text(search);
+                    if (search !== "") {
+                        f('#load').show();
+                        f.post('/ajax/post.php', {search: search}, function (data) {
+                            f('#res').show('1000');
+                            f('#res').html(data);
+                            f('#res').show();
+                            f('#load').hide();
+                        });
+                    }
+
+                });
+
+
+                f('#search').click(function () {
+
+                    var search = f('#search').val();
+
+                    search = f.trim(search);
+
+//f('#res').text(search);
+                    if (search !== "") {
+                        f('#load').show();
+                        f.post('http://localhost/chercher/post.php', {search: search}, function (data) {
+                            f('#res').show('1000');
+                            f('#res').html(data);
+                            f('#res').show();
+                            f('#load').hide();
+                        });
+                    }
+
+                });
+
+
+            });
+        </script>
+        <script>
+            const {produits} = [
+                {designation: 'rtr', type: 'yy'},
+                {designation: 'as', type: 'yyi'},
+                {designation: 'tr', type: 'ytty'},
+                {designation: 'zzzr', type: 'hhyy'}
+
+            ];
+            const searchinput = document.getElementById('searchinput');
+            searchinput.addEventListener('keyup', function () {
+                const input = searchinput.value;
+                const result = produits.filter(item => item.designation.toLocaleLowerCase().includes(input.toLocaleLowerCase()));
+                let suggestion = '';
+                if (input != '') {
+                    result.forEach(resultItem =>
+                        suggestion +=
+                            '<div > ${resultatItem.designation}</div>')
+                }
+                document.getElementById('suggestions').innerHTML = suggestion;
+            })
+        </script>
+    {% endblock %}
+{% endblock %}

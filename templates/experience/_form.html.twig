@@ -1,0 +1,27 @@
+
+<div>
+    <h1>Donnnez votre avis sur notre site</h1>
+    <div class="d-flex justify-content-center">{{ form_start(form) }}
+        <table>
+         <tr>
+            <td>{{ form_label(form.note, "Enter une note: ", {'label_attr': {'class': 'control-label'}}) }}</td>
+             <td>{{ form_errors(form.note) }}</td>
+             <td>{{ form_widget(form.note) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.avis, "Vous ajoutez un avis: ", {'label_attr': {'class': 'control-label'}}) }}</td>
+            <td>{{ form_errors(form.avis) }}</td>
+            <td>{{ form_widget(form.avis) }}</td>
+        </tr>
+
+        </table>
+        <button class="btn-primary">{{ button_label|default('Save') }}</button>
+        {{ form_end(form) }}
+    </div>
+
+
+
+</div>
+
+
+

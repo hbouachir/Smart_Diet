@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+    <section class="inscri vh-100">
+        <div class="container py-5 h-100">
+            <div class="row d-flex align-items-center justify-content-center h-100">
+                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                    {% for label, messages in app.flashes(['success', 'error']) %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ label }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                    <h3>Créer votre Compte  </h3>
+                    {% for message in app.flashes('success') %}
+                        <div class="alert alert-success">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    {% set formErrors = registrationForm.vars.errors.form.getErrors(true) %}
+                    {% if formErrors|length %}
+                        <div class="alert alert-danger">
+                            <ul>
+                                {% for error in formErrors %}
+                                    <li>{{ error.message }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                    {# Render the Form #}
+                    {{ form_start(registrationForm) }}
+                    <div class="form-outline mb-4">
+                        {{ form_label(registrationForm.username) }}
+                        <span class="text-danger"> *</span>
+                        {{ form_widget(registrationForm.username) }}
+                    </div>
+                    <div class="form-outline mb-4">
+                        {{ form_label(registrationForm.email) }}
+                        <span class="text-danger"> *</span>
+                        {{ form_widget(registrationForm.email) }}
+                    </div>
+                    <div class="form-outline mb-4">
+                        {{ form_label(registrationForm.password.first) }} <span
+                                class="text-danger"> *</span>
+                        {{ form_widget(registrationForm.password.first, {'attr': {'class': 'form-control'}}) }}
+
+                    </div>
+                    <div class="form-outline mb-4">
+                        {{ form_label(registrationForm.password.second) }} <span
+                                class="text-danger"> *</span>
+                        {{ form_widget(registrationForm.password.second, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <br>
+                    {{ form_row(registrationForm.agreeTerms) }}
+                    <br>
+                    <button class="btn-lg btn-block"style=" background-color: #0b3b63;">Créer un compte</button>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+

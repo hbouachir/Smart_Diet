@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <head>
+        <link type="text/css" rel="stylesheet" href="../front/css/BELstyle.css"/>
+    </head>
+    <body id="body">
+    <section class="single-product">
+        <div class="container">
+            <div class="entete row ">
+                <!--------------lien de nav------------------->
+                <div class="col-md-12">
+                    <ol class="breadcrumb">
+                        <li><a href="{{ path('produit_index') }}"> Acceuil &nbsp; </a></li>
+                        <li><a href="#"> Panier &nbsp; </a></li>
+                    </ol>
+                </div>
+                <!--------------end lien de nav------------------->
+            </div>
+            <br>
+            <div class="row mt-20">
+                <div class="col-md-12">
+                    <div class="single-product-slider">
+                        {% if produits|length>=0 %}
+                            <form class="row g-3 needs-validation" action="{{ path('commander') }}"
+                                  method="POST"
+                                  novalidate>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Produit</th>
+                                        <th>Nom</th>
+                                        <th>Prix</th>
+                                        <th>Quantité</th>
+                                        <th>Total</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for produit in produits %}
+                                        <tr>
+                                            <td><img style="height: 100px;width: 100px" class="img-fluid"
+                                                     src=""
+                                                     alt=""/></td>
+                                            <td>{{ produit.produit.nom }}</td>
+                                            <td id="prix">{{ produit.produit.prix }}</td>
+                                            <td>
+                                                <div class="product-quantity">
+                                                    <div class="input-group">
+                                                        <a href="{{ path('cart_minus',{'id':produit.produit.id}) }}"><input id="moins" type="button" value="-" class="button-minus"
+                                                               data-field="quantity" onclick="totalpanier()"></a>
+                                                        <input type="number" step="1" max=""
+                                                               name="quantity" id="test"
+                                                               value="{{ produit.quantite }}"
+                                                               class="quantity-field">
+                                                        <a href="{{ path('cart_ajout',{'id':produit.produit.id}) }}"><input type="button" id="plus" value="+" class="button-plus"
+                                                               data-field="quantity" onclick="totalpanier()"/></a>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td id="qte">{{ produit.quantite * produit.produit.prix }}</td>
+                                            <td>
+                                                <a href="{{ path('cart_supp',{'id': produit.produit.id}) }}"
+                                                   class="btn btn-danger btn-sm">
+                                                    <i class="bx bx-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td colspan="5" class="text-right"><strong>Total :</strong></td>
+                                        <td id="tot"><strong>{{ total }} DT</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6" class="text-right"><strong>
+                                                <button name="commander" type="submit"
+                                                        class="btn btn-main mt-20"{% if total==0 %} disabled {% endif %}>
+                                                    <i class="fa fa-hand-o-right"></i> Commander
+                                                </button>
+                                            </strong></td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </form>
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </body>
+    <script>
+
+        function totalpanier() {
+            var plus = document.getElementById('plus');
+            var moins = document.getElementById('moins');
+            var input = document.getElementById("test").value ;
+            var prix = document.getElementById("prix").value ;
+            var total = document.getElementById("tot") ;
+            console.log(typeof(document.getElementById("test").value));
+            var qte = 1+ parseInt(document.getElementById("test").value);
+            alter(qte);
+            $('#total').val(qte);
+
+        }
+
+    </script>
+
+{% endblock body %}
