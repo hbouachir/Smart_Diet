@@ -19,6 +19,34 @@ class PersonneRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Personne::class);
     }
+    public function findOneByEmail($value): ?Personne
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.mail = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
+
+    public function search($value)
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.nom LIKE :val')
+            ->setParameter('val','%'.$value.'%')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+    public function searchClient($value)
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.privilege = :val')
+            ->setParameter('val',$value)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 
     // /**
     //  * @return Client[] Returns an array of Client objects

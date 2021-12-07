@@ -2,10 +2,7 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
-
 
 /**
  * Personne
@@ -13,7 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table(name="personne")
  * @ORM\Entity
  */
-class Personne implements UserInterface
+class Personne
 {
     /**
      * @var int
@@ -58,7 +55,6 @@ class Personne implements UserInterface
      * @ORM\Column(name="password", type="string", length=255, nullable=false)
      */
     private $password;
-
 
     /**
      * @var string|null
@@ -110,14 +106,12 @@ class Personne implements UserInterface
     private $mode;
 
     /**
-
-     * @ORM\OneToMany(targetEntity="Suivi",mappedBy="iduser",cascade={"all"},orphanRemoval=true)
-
+     * @var string|null
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
      */
-    private $suivis;
-public function __construct(){
-    $this->suivis=new ArrayCollection();
-}
+    private $image;
+
     /**
      * @return int
      */
@@ -137,7 +131,7 @@ public function __construct(){
     }
 
     /**
-     * @return string|null
+     * @return string
      */
     public function getNom(): ?string
     {
@@ -155,9 +149,9 @@ public function __construct(){
     }
 
     /**
-     * @return string|null
+     * @return string
      */
-    public function getPrenom():? string
+    public function getPrenom(): ?string
     {
         return $this->prenom;
     }
@@ -191,9 +185,9 @@ public function __construct(){
     }
 
     /**
-     * @return string|null
+     * @return string
      */
-    public function getMail():? string
+    public function getMail(): ?string
     {
         return $this->mail;
     }
@@ -209,9 +203,9 @@ public function __construct(){
     }
 
     /**
-     * @return string|null the hashed password for this user
+     * @return string
      */
-    public function getPassword():? string
+    public function getPassword(): ?string
     {
         return $this->password;
     }
@@ -220,7 +214,7 @@ public function __construct(){
      * @param string $password
      * @return Personne
      */
-    public function setPassword(string $password): Personne
+    public function setPassword(?string $password): Personne
     {
         $this->password = $password;
         return $this;
@@ -299,7 +293,7 @@ public function __construct(){
     }
 
     /**
-     * @return string|null
+     * @return string
      */
     public function getPrivilege(): ?string
     {
@@ -351,8 +345,24 @@ public function __construct(){
         $this->mode = $mode;
         return $this;
     }
-    public function getSalt(){
-        return null;
+
+    /**
+     * @return string|null
+     */
+    public function getImage(): ?string
+    {
+        return $this->image;
     }
+
+    /**
+     * @param string|null $image
+     * @return Personne
+     */
+    public function setImage(?string $image): Personne
+    {
+        $this->image = $image;
+        return $this;
+    }
+
 
 }

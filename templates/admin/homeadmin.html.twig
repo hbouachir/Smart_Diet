@@ -25,23 +25,15 @@
 <body class="g-sidenav-show  bg-gray-200">
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
     <div class="sidenav-header">
-        <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-        <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
-            <img src="{{asset('assets1/img/logo-ct.png" class="navbar-brand-img h-100')}}" alt="main_logo">
-            <span class="ms-1 font-weight-bold text-white">Material Dashboard 2</span>
+        <a class="navbar-brand m-0" href="#" style="color: #06aed5">
+            <i class="fas fa-circle text-success" ></i>Online
+
         </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link text-white " href="../pages/dashboard.html">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">dashboard</i>
-                    </div>
-                    <span class="nav-link-text ms-1">Dashboard</span>
-                </a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link text-white active bg-gradient-primary" href="../pages/tables.html">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -86,7 +78,7 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="../pages/profile.html">
+                <a class="nav-link text-white " href="{{ path('profilA') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">person</i>
                     </div>
@@ -94,11 +86,11 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="{{ path('Ajou') }}">
+                <a class="nav-link text-white " href="{{ path('logoutad') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">login</i>
                     </div>
-                    <span class="nav-link-text ms-1">Sign In</span>
+                    <span class="nav-link-text ms-1">Sign Out</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -132,7 +124,14 @@
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                     <div class="input-group input-group-outline">
 
-                        <input name="idU" value="id admin= {{ app.session.get('id') }}">
+
+
+                        {#  <input name="idU" value="  {{ u.prenom }}">#}
+
+
+
+
+                    {#     <input name="idU" value="id admin= {{ app.session.get('name') }}">#}
                     </div>
                 </div>
                 <ul class="navbar-nav  justify-content-end">
@@ -142,6 +141,8 @@
                             <span class="d-sm-inline d-none">Sign In</span>
                         </a>
                     </li>
+
+
                     <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                         <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                             <div class="sidenav-toggler-inner">
@@ -183,7 +184,7 @@
                                 <a class="dropdown-item border-radius-md" href="javascript:;">
                                     <div class="d-flex py-1">
                                         <div class="my-auto">
-                                            <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
+                                            <img src="{{asset('assets/img/small-logos/logo-spotify.svg')}}" class="avatar avatar-sm bg-gradient-dark  me-3 ">
                                         </div>
                                         <div class="d-flex flex-column justify-content-center">
                                             <h6 class="text-sm font-weight-normal mb-1">
@@ -235,8 +236,13 @@
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
-        <a href="{{ path('Ajou') }}" class="btn btn-success" >AjouterClient
+        <a href="{{ path('Ajou') }}" class="btn btn-success" >Ajouter Client
         </a>
+        <a href="{{ path('AjouN') }}" class="btn btn-success" >Ajouter Nut/Coach
+        </a>
+        <a href="{{ path('A') }}" class="btn btn-success" > Product
+        </a>
+
         <div class="row">
             <div class="col-12">
                 <div class="card my-4">
@@ -247,6 +253,18 @@
                     </div>
                     <div class="card-body px-0 pb-2">
                         <div class="table-responsive p-0">
+                            <div>
+
+                                {{ form_start(form) }}
+                               {{ form_row(form.nom, { 'attr': {'class': 'form-control'} }) }}
+
+
+                                <div class="register-btn-container">
+
+                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                </div>
+                                {{ form_end(form) }}
+                            </div>
                             <table class="table align-items-center mb-0">
                                 <tr>
                                     <th scope="col">Id</th>
@@ -313,14 +331,20 @@
 
                                         <td>{{ f.mode }}</td>
                                         <td><a href="{{ path('D',{'id':f.id}) }}" class="btn btn-danger deletebtn">Delete</a></td>
-                                        <td><a href="{{ path('U',{'id':f.id}) }}" class="btn btn-primary">Update</a></td>
+                                        <td><a href="{{ path('UA',{'id':f.id}) }}" class="btn btn-primary">Update</a></td>
+                                        <td><a href="{{ path('ACTIVER',{'id':f.id}) }}" class="btn btn-primary">Activer le compte</a></td>
+                                        <td><a href="{{ path('DESACTIVERAD',{'id':f.id}) }}" class="btn btn-primary">Desactiver le compte</a></td>
+
                                     </tr>
                                 {% endfor %}
 
 
                             </table>
+
                         </div>
+
                     </div>
+                    <a class="btn btn-primary" href="{{ path('facture_list')}}"> Imprimer</a>
                 </div>
             </div>
         </div>
@@ -392,7 +416,6 @@
 
 
                                         <td><a href="{{ path('DS',{'id':f.idsuivi }) }}" class="btn btn-danger deletebtn">Delete</a></td>
-                                        <td><a href="{{ path('US',{'id':f.idsuivi}) }}" class="btn btn-primary">Update</a></td>
 
 
                                     </tr>

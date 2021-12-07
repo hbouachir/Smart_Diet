@@ -1,0 +1,82 @@
+{# ./templates/default/mypdf.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des users</title>
+</head>
+<body>
+<table class="table align-items-center mb-0">
+    <tr>
+        <th scope="col">Id</th>
+
+        <th scope="col">Nom</th>
+
+        <th scope="col">prenom</th>
+
+        <th scope="col">dateNaissance</th>
+
+        <th scope="col">email</th>
+
+        <th scope="col">password</th>
+
+        <th scope="col">adresse</th>
+
+        <th scope="col">referenceClient</th>
+
+        <th scope="col">Numero</th>
+
+        <th scope="col">civilite</th>
+
+        <th scope="col">privilege</th>
+
+        <th scope="col">Maladie</th>
+
+        <th scope="col">mode</th>
+
+
+    </tr>
+
+
+    {% for f in c %}
+        <tr >
+            <td>{{ f.id }}</td>
+
+
+            <td>{{ f.nom }}</td>
+
+
+            <td>{{ f.prenom }}</td>
+
+
+            <td>{{ f.dateNaissance }}</td>
+
+
+            <td>{{ f.mail }}</td>
+
+
+            <td>{{ f.password }}</td>
+
+
+            <td>{{ f.adresse }}</td>
+
+            <td>{{ f.referenceClient }}</td>
+
+            <td>{{ f.numero }}</td>
+
+            <td>{{ f.civilite }}</td>
+
+            <td>{{ f.privilege }}</td>
+
+            <td>{{ f.maladie }}</td>
+
+            <td>{{ f.mode }}</td>
+
+        </tr>
+    {% endfor %}
+
+
+</table>
+
+</body>
+</html>

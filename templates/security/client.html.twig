@@ -6,32 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap Min CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
     <!-- Owl Theme Default Min CSS -->
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
     <!-- Owl Carousel Min CSS -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
     <!-- Boxicons Min CSS -->
-    <link rel="stylesheet" href="assets/css/boxicons.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/boxicons.min.css')}}">
     <!-- Flaticon CSS -->
-    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="{{asset('assets/css/flaticon.css')}}">
     <!-- Meanmenu Min CSS -->
-    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/meanmenu.min.css')}}">
     <!-- Animate Min CSS -->
-    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}">
     <!-- Nice Select Min CSS -->
-    <link rel="stylesheet" href="assets/css/nice-select.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/nice-select.min.css')}}">
     <!-- Date Picker CSS-->
-    <link rel="stylesheet" href="assets/css/date-picker.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/date-picker.min.css')}}">
     <!-- Magnific Popup Min CSS -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.min.css')}}">
     <!-- Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="{{asset('assets/images/favicon.png')}}">
     <!-- Title -->
     <title>Aava - Diet & Nutrition Health Center HTML Template</title>
 </head>
@@ -129,9 +129,15 @@
 
                         <ul class="my-account">
                             <li>
-                                <a href="my-account.html">
+                                <a href="{{ path('profilC') }}">
                                     <i class="bx bxs-user"></i>
                                     Account
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('logout') }}">
+                                    <i class="bx bxs-user"></i>
+                                   log out
                                 </a>
                             </li>
                             <li>
@@ -294,7 +300,7 @@
 
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="products.html" class="nav-link">Products</a>
+                                        <a href="{{ path('L') }}" class="nav-link">Products</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href=" {{ path('suivi')}}" class="nav-link">Suivis</a>
@@ -406,13 +412,33 @@
 </header>
 <!-- Start Shopping Cart Area -->
 <div class="shopping-cart-area wishlist-style ptb-100">
-<div><h3>le client connecté a pour id = {{ app.session.get('id') }} </h3>
+<div>
+   <h2><b>Hello</b> {{u.prenom  }} {{ u.nom }}</h2>
 
 </div>
-    <div class="container">
-        <a href="{{ path('AjouS') }}" class="btn btn-success" >AjouterSuivi</a>
 
+    <div class="container">
+
+        <a href="{{ path('profilC') }}" class="btn btn-success" >Profil</a>
+        <a href="{{ path('des') }}" class="btn btn-success" >Desactiver le compte</a>
+        <a href="{{ path('AjouS') }}" class="btn btn-success" >AjouterSuivi</a>
+       <a href="{{ path('ASC') }}" class="btn btn-success" >liste</a>
+        <a href="{{ path('profilC') }}" class="btn btn-success" >Shop</a>
     </div>
+    {% if app.session.flashBag.has('Notice') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('Notice') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if app.session.flashBag.has('INFO') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('INFO') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
 </div>
 </body>
 <!-- End Shopping Cart Area -->

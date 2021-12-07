@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Produit;
 use App\Form\ProduitType;
+use App\Repository\produitRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,84 +16,138 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ProduitController extends AbstractController
 {
-    /**
-     * @Route("/", name="produit_index", methods={"GET"})
-     */
-    public function index(): Response
-    {
-        $produits = $this->getDoctrine()
-            ->getRepository(Produit::class)
-            ->findAll();
 
-        return $this->render('produit/index.html.twig', [
-            'produits' => $produits,
-        ]);
+
+
+    /**
+     * @param produitRepository $repo
+     * @return Symfony\Component\HttpFoundation\Response
+     * @Route("List/",name="L")
+     */
+    function List(produitRepository $repo,Request $request){
+        //request select * from produit
+        //$rep=$this->getDoctrine()->getRepository(produit::class);
+        $produit=$repo->findAll();
+        $em = $this->getDoctrine()->getManager();
+        $produit= $em ->getRepository(produit::class)->findAll();
+
+
+        if ($request->isMethod("POST"))
+        {
+            $categorie = $request->get('categorie');
+            $produit = $em->getRepository(Produit::class)->findBy(array('categorie'=>$categorie));
+
+
+        }
+
+
+        return $this->render('produit/liste.html.twig',
+            ['p'=>$produit]);
+    }
+
+
+
+
+
+    /**
+     * @param produitRepository $repo
+     * @return Symfony\Component\HttpFoundation\Response
+     * @Route("AfficheProduit/",name="A")
+     */
+    function Affiche(produitRepository $repo){
+        //request select * from produit
+        //$rep=$this->getDoctrine()->getRepository(produit::class);
+        $produit=$repo->findAll();
+
+        return $this->render('produit/index.html.twig',
+            ['p'=>$produit]);
     }
 
     /**
-     * @Route("new/", name="produit_new", methods={"GET","POST"})
+     * @Route ("Delete/{id}",name="D")
      */
-    public function new(Request $request): Response
-    {
-        $produit = new Produit();
-        $form = $this->createForm(ProduitType::class, $produit);
+    function remove($id,produitRepository $repository,Request $request){
+        $produit=$repository->find($id);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($produit);
+        $em->flush();
+        $this->addFlash(
+            'info','product deleted successfuly'
+        );
+
+        return $this->redirectToRoute('A');
+
+    }
+
+
+    /**
+     * @param Request $request
+     * @return Response
+     * @Route ("Ajout/",name="Aj")
+     */
+    function ajout(Request $request){
+        $produit=new Produit();
+        $form=$this->createForm(ProduitType::class,$produit);
+
         $form->handleRequest($request);
+        if($form->isSubmitted() &&$form->isValid() ){
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($produit);
+            $em->flush();
+            $this->addFlash(
+                'info','product added successfuly'
+            );
+            return $this->redirectToRoute('A');
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($produit);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('produit_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('produit/new.html.twig', [
-            'produit' => $produit,
-            'form' => $form->createView(),
-        ]);
+        return $this->render("produit/Ajout.html.twig",
+            ['p'=>$form->createView()]);
+
+
     }
 
-    /**
-     * @Route("/{codeproduit}", name="produit_show", methods={"GET"})
-     */
-    public function show(Produit $produit): Response
-    {
-        return $this->render('produit/show.html.twig', [
-            'produit' => $produit,
-        ]);
-    }
 
     /**
-     * @Route("/{codeproduit}/edit", name="produit_edit", methods={"GET","POST"})
+     * @Route ("Update/{id}",name="U")
      */
-    public function edit(Request $request, Produit $produit): Response
-    {
-        $form = $this->createForm(ProduitType::class, $produit);
+    function Update(Request $request,produitRepository $repository,$id){
+        $produit=$repository->find($id);
+        $form=$this->createForm(ProduitType::class,$produit);
         $form->handleRequest($request);
+        if($form->isSubmitted() &&$form->isValid() ){
+            $em=$this->getDoctrine()->getManager();
+            //$em->persist($classroom);
+            $em->flush();
+            $this->addFlash(
+                'info','List of products update successfuly'
+            );
+            if ($produit->getQuantite()==0){
+                $em = $this->getDoctrine()->getManager();
+                $em->remove($produit);
+                $em->flush();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('produit_index', [], Response::HTTP_SEE_OTHER);
+            }
+            if ($produit->getQuantite()<=5){
+                $this->addFlash(
+                    'info','check stock'
+                );
+            }
+            return $this->redirectToRoute('A');
+
         }
 
-        return $this->render('produit/edit.html.twig', [
-            'produit' => $produit,
-            'form' => $form->createView(),
-        ]);
+
+        return $this->render("produit/Ajout.html.twig",
+            ['p'=>$form->createView()]);
+
     }
 
-    /**
-     * @Route("/{codeproduit}", name="produit_delete", methods={"POST"})
-     */
-    public function delete(Request $request, Produit $produit): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$produit->getCodeproduit(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($produit);
-            $entityManager->flush();
-        }
 
-        return $this->redirectToRoute('produit_index', [], Response::HTTP_SEE_OTHER);
-    }
+
+
+
+
 }

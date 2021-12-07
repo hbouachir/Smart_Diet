@@ -1,0 +1,906 @@
+.top-header .header-right-content {
+  text-align: left;
+}
+
+.top-header .header-right-content .my-account li {
+  margin-right: 0;
+  margin-left: 25px;
+}
+
+.top-header .header-right-content .my-account li a i {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+.top-header .header-right-content .my-account li a span {
+  left: auto;
+  right: 10px;
+}
+
+.top-header .header-right-content .my-account li:last-child {
+  margin-left: 0;
+}
+
+.top-header .header-right-content .language {
+  margin-right: 0;
+  margin-left: 30px;
+}
+
+.top-header .header-right-content .language .language-settings .dropdown-toggle.language-btn {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.top-header .header-right-content .language .language-settings .dropdown-toggle.language-btn span {
+  left: auto;
+  right: 0;
+  top: 8px;
+}
+
+.top-header .header-right-content .language .language-settings .dropdown-menu {
+  right: 0 !important;
+  left: auto !important;
+}
+
+.top-header .header-right-content .language .language-settings .dropdown-menu .dropdown-item span {
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+.top-header .header-left-content .contact-info {
+  margin-right: 0;
+}
+
+.top-header .header-left-content .contact-info li {
+  padding-left: 0;
+  padding-right: 30px;
+}
+
+.top-header .header-left-content .contact-info li i {
+  left: auto;
+  right: 0;
+  margin-right: 0;
+  margin-left: 5px;
+  top: -2px;
+}
+
+.navbar-area .desktop-nav .navbar .navbar-brand {
+  margin-left: 0;
+}
+
+.navbar-area .desktop-nav .navbar .others-option .get-quote {
+  margin-left: 0;
+  margin-right: 54px;
+}
+
+.navbar-area .desktop-nav .navbar .others-option .search-box {
+  left: auto;
+  right: 0;
+  -webkit-transform: translate(50%, 0);
+          transform: translate(50%, 0);
+}
+
+.navbar-area .desktop-nav .navbar .others-option .search-box .search-btn {
+  right: auto;
+  left: -1px;
+}
+
+.navbar-area .desktop-nav .navbar .others-option .search-box:hover > .search-btn {
+  right: auto;
+  left: 5px;
+}
+
+.navbar-area .desktop-nav .navbar .others-option .search-box:focus + .search-btn {
+  right: auto;
+  left: 5px;
+}
+
+.navbar-area .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu li a i {
+  float: left;
+  left: -6px;
+}
+
+.navbar-area .desktop-nav .navbar .navbar-nav .nav-item .dropdown-menu:last-child .dropdown-menu {
+  right: auto;
+  left: -100%;
+}
+
+.hero-slider-area .hero-slider-content {
+  opacity: 1;
+  margin-left: 0;
+  margin-right: 50px;
+}
+
+.about-content {
+  margin-left: 0;
+  margin-right: 70px;
+}
+
+.about-content ul li {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.about-content ul li::before {
+  left: auto;
+  right: 0;
+}
+
+.about-us-area .about-shape-img {
+  right: auto;
+  left: 0;
+}
+
+.about-img-content .about-img-1 .about-img-2 {
+  text-align: left;
+}
+
+.about-img-content .video {
+  left: auto;
+  right: 0;
+}
+
+.about-img-content h3 {
+  right: auto;
+  left: -66px;
+}
+
+.why-choose-us-img {
+  text-align: left;
+}
+
+.why-choose-us-content ul li {
+  padding-left: 0;
+  padding-right: 70px;
+}
+
+.why-choose-us-content ul li span {
+  left: auto;
+  right: 0;
+}
+
+.appointment-area .col-lg-6.pl-0 {
+  padding-left: 15px !important;
+  padding-right: 0 !important;
+}
+
+.appointment-action {
+  position: relative;
+}
+
+.appointment-action [type=email], .appointment-action [type=number], .appointment-action [type=tel], .appointment-action [type=url] {
+  direction: unset;
+}
+
+.appointment-action .form-group i {
+  right: auto;
+  left: 0;
+}
+
+.nice-select .current {
+  float: right;
+}
+
+.nice-select:after {
+  right: auto !important;
+  left: 0;
+}
+
+.nice-select .option {
+  text-align: right;
+}
+
+.team-area .section-title {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+}
+
+.team-area .owl-theme .owl-nav {
+  right: auto;
+  left: 25px;
+}
+
+.testimonials-area .container h4 {
+  left: auto;
+  right: 0;
+}
+
+.testimonials-content {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.healthy-life-area .healthy-life-shape-img {
+  right: auto;
+  left: 0;
+}
+
+.healthy-life-content {
+  margin-left: 0;
+  margin-right: 70px;
+}
+
+.healthy-life-content ul li {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.healthy-life-content ul li::before {
+  left: auto;
+  right: 0;
+}
+
+.single-news .news-content ul li {
+  border-right: none;
+  border-left: 1px solid #62bd5e;
+  margin-right: 0;
+  padding-right: 0;
+  margin-left: 10px;
+  padding-left: 12px;
+}
+
+.single-news .news-content ul li:last-child {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.single-footer-widget .address li {
+  padding-left: 0;
+  padding-right: 40px;
+}
+
+.single-footer-widget .address li i {
+  left: auto;
+  right: 0;
+}
+
+.hero-slider-area.hero-slider-area-style-two .hero-slider-item {
+  background-position: left;
+}
+
+.hero-slider-area .social-icon {
+  left: auto;
+  right: 15px;
+}
+
+.hero-slider-area .social-icon li span {
+  left: auto;
+  right: 0;
+}
+
+.hero-slider-area .social-icon li:hover span {
+  left: auto;
+  right: 40px;
+}
+
+.hero-slider-area .owl-dots {
+  right: auto;
+  left: 50px;
+}
+
+.about-us-area.about-us-area-style-two h3 {
+  left: auto;
+  right: 0;
+}
+
+.what-we-offer-area.what-we-offer-area-style-two .section-title {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+}
+
+.what-we-offer-area.what-we-offer-area-style-two .owl-theme .owl-nav {
+  right: auto;
+  left: 50px;
+}
+
+.what-we-offer-area.what-we-offer-area-style-two .owl-theme .owl-nav .owl-next {
+  left: auto;
+  right: -70px;
+}
+
+.healthy-life-area.healthy-life-area-style-two .pr-0 {
+  padding-right: 15px !important;
+  padding-left: 0 !important;
+}
+
+.appointment-area.appointment-area-style-two .appointment-action {
+  margin-left: auto;
+  margin-right: -250px;
+}
+
+.appointment-area.appointment-area-style-two .appointment-action form h2 {
+  right: 438px;
+  top: 358px;
+}
+
+.faq-accordion .accordion .accordion-title {
+  padding: 20px 25px 17px 60px;
+}
+
+.faq-accordion .accordion .accordion-title i {
+  right: auto;
+  left: 25px;
+}
+
+.our-news-area.our-news-area-style-two .section-title {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+}
+
+.our-news-area.our-news-area-style-two .owl-theme .owl-nav {
+  right: auto;
+  left: 50px;
+}
+
+.our-news-area.our-news-area-style-two .owl-theme .owl-nav .owl-next {
+  left: auto;
+  right: -70px;
+}
+
+.top-header .header-left-content .social-icon {
+  margin-right: 30px;
+}
+
+.top-header .header-left-content .social-icon li:last-child {
+  margin-right: 10px;
+}
+
+.top-header .header-left-content .social-icon li:first-child {
+  margin-right: 0;
+}
+
+.banner-area .banner-content .banner-btn .default-btn.active {
+  margin-left: 0;
+  margin-right: 30px;
+}
+
+.single-expertise-box {
+  padding-left: 30px;
+  padding-right: 100px;
+}
+
+.single-expertise-box i {
+  left: auto;
+  right: -35px;
+  border-radius: 100% 0% 0% 100% / 0% 100% 0% 100%;
+}
+
+.about-us-area.about-us-area-style-three .about-img-content h3 {
+  right: auto;
+  top: 200px;
+  left: -250px;
+}
+
+.healthy-life-content {
+  margin-right: 0;
+  margin-left: 70px;
+}
+
+.calculate-img {
+  margin-left: 0;
+  margin-right: 100px;
+}
+
+.calculate-box .calculate-form .form-group .nice-select::after {
+  left: 20px;
+}
+
+.single-what-we-offer .what-we-offer-content {
+  text-align: right;
+}
+
+.our-news-area.our-news-area-style-three .single-news {
+  text-align: right;
+}
+
+.our-news-area.our-news-area-style-three .single-news .news-content li i {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+.page-title-area .page-title-content ul li {
+  padding-right: 0;
+  padding-left: 15px;
+  margin-left: 0;
+  margin-right: 15px;
+}
+
+.page-title-area .page-title-content ul li::before {
+  right: auto;
+  left: -3px;
+}
+
+.user-area-style .contact-form-action form .login-action .forgot-login {
+  float: left;
+}
+
+.user-area-style .contact-form-action form .right {
+  float: left;
+}
+
+.user-area-style.recover-password-area .now-register {
+  float: left;
+}
+
+.coming-soon-content .newsletter-form [type=email], .coming-soon-content .newsletter-form [type=number], .coming-soon-content .newsletter-form [type=tel], .coming-soon-content .newsletter-form [type=url] {
+  direction: unset;
+}
+
+.coming-soon-content .newsletter-form .input-newsletter {
+  padding-right: 15px;
+  color: #171515;
+}
+
+.coming-soon-content .newsletter-form button {
+  right: auto;
+  left: 0;
+}
+
+.coming-soon-content #timer div::before {
+  left: -9px;
+  right: auto;
+}
+
+.coming-soon-content #timer div::after {
+  left: -9px;
+  right: auto;
+}
+
+.sidebar-widget.search .search-form .search-button {
+  right: auto;
+  left: 0;
+}
+
+.sidebar-widget.categories ul li a {
+  padding-left: 0;
+  padding-right: 10px;
+  border-left: none;
+  border-right: 1px solid #ffffff;
+}
+
+.sidebar-widget.categories ul li a i {
+  float: left;
+}
+
+.sidebar-widget.categories ul li a:hover {
+  border-right: 1px solid #62bd5e;
+  border-left: none;
+  padding-left: 0;
+  padding-right: 5px;
+}
+
+.sidebar-widget.recent-post ul li {
+  padding-left: 0;
+  padding-right: 90px;
+}
+
+.sidebar-widget.recent-post ul li a img {
+  left: auto;
+  right: 0;
+}
+
+.sidebar-widget.employer-widget [type=email], .sidebar-widget.employer-widget [type=number], .sidebar-widget.employer-widget [type=tel], .sidebar-widget.employer-widget [type=url] {
+  direction: unset;
+}
+
+.news-details-content .news-top-content blockquote {
+  padding-left: 0;
+  padding-right: 100px;
+}
+
+.news-details-content .news-top-content blockquote i {
+  left: auto;
+  right: 30px;
+}
+
+.news-details-content .news-top-content .news-content .admin li {
+  margin-right: 0;
+  padding-right: 0;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.news-details-content .news-top-content .news-content .admin li::before {
+  right: auto;
+  left: 0;
+}
+
+.news-details-content .news-top-content .news-content .admin li i {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+.news-details-content .share-link {
+  float: left;
+}
+
+.news-details-content .share-link span i {
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+.news-details-content .tags .tag-link li {
+  margin-right: 0;
+  margin-left: 15px;
+}
+
+.services-details-content .services-content-item .services-list li {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.services-details-content .services-content-item .services-list li::before {
+  left: auto;
+  right: 0;
+}
+
+.shopping-cart-area .coupon-cart .default-btn.update-cart {
+  float: left;
+}
+
+.checkout-area .cart-totals ul li span {
+  float: left;
+}
+
+.checkout-area .faq-accordion .accordion {
+  padding-right: 0;
+}
+
+.checkout-area .faq-accordion .accordion .accordion-title {
+  padding-left: 0;
+  padding-right: 25px;
+  font-weight: 600;
+}
+
+.checkout-area .faq-accordion .accordion .accordion-title::before {
+  left: auto;
+  right: 0;
+}
+
+.checkout-area .faq-accordion .accordion .accordion-title:after {
+  left: auto;
+  right: 6px;
+}
+
+.checkout-area .faq-accordion .accordion .accordion-title .active::after {
+  right: 6px;
+}
+
+.product-details-area .product-details-desc .category li span {
+  left: auto;
+  right: 0;
+  margin-left: 0;
+  margin-right: 112px;
+}
+
+.product-details-area .product-details-desc .social-wrap {
+  padding-right: 0;
+}
+
+.product-details-area .product-details-desc .social-wrap li span {
+  margin-right: 0;
+  margin-left: 45px;
+  padding-right: 0;
+  padding-left: 10px;
+}
+
+.product-details-area .products-details-content h4::before {
+  left: auto;
+  right: 125px;
+  top: 11px;
+}
+
+.product-details-area .products-details-content .reviews ul li span {
+  float: left;
+}
+
+.product-details-area .products-details-content .reviews ul li::before {
+  left: auto;
+  right: 65px;
+}
+
+.product-details-area .products-details-content .reviews ul li::after {
+  left: auto;
+  right: 65px;
+}
+
+.product-details-area .products-details-content .overview-list li {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.product-details-area .products-details-content .overview-list li:before {
+  left: auto;
+  right: 0;
+}
+
+.product-view-one .modal-content .product-content .product-add-to-cart .input-counter {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+.product-view-one .modal-content .product-content .product-color-switch ul {
+  padding-right: 0;
+}
+
+.news-list-area .single-news {
+  text-align: right;
+}
+
+.single-news .news-content ul li i {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+.services-details-content .services-content-item img {
+  margin-bottom: 30px;
+}
+
+.sidebar-widget.open-closed ul li span {
+  float: left;
+}
+
+.page-title-area .page-title-content ul {
+  padding-right: 0;
+}
+
+.navbar-area .desktop-nav .navbar .others-option .search-box {
+  -webkit-transform: translate(0%, 0);
+          transform: translate(0%, 0);
+}
+
+.navbar-area .desktop-nav .navbar .others-option .option-item .search-overlay.search-popup .search-form .search-button {
+  left: 0;
+  right: auto;
+}
+
+.navbar-area .desktop-nav .navbar .others-option .option-item .search-overlay.search-popup .search-form .search-input {
+  padding-left: 0;
+  padding-right: 15px;
+}
+
+.navbar-area .desktop-nav .navbar .others-option .get-quote {
+  margin-right: 30px;
+}
+
+.appointment-action .form-group i {
+  right: auto;
+  left: 12px;
+}
+
+.nice-select:after {
+  right: auto !important;
+  left: 12px !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .top-header .header-right-content {
+    text-align: center;
+  }
+  .top-header .header-right-content .language {
+    margin-left: 0;
+  }
+  .top-header .header-right-content .my-account li {
+    margin-left: 10px;
+  }
+  .hero-slider-area .hero-slider-content {
+    margin-right: 0;
+  }
+  .about-img-content .video {
+    right: 55px;
+  }
+  .about-content {
+    margin-right: 0;
+  }
+  .about-content ul li {
+    padding-right: 0;
+  }
+  .why-choose-us-content ul li {
+    padding-right: 0;
+  }
+  .single-what-we-offer .what-we-offer-content {
+    text-align: center;
+  }
+  .healthy-life-content {
+    margin-left: 0;
+  }
+  .healthy-life-content ul li {
+    padding-right: 0;
+  }
+  .team-area .section-title {
+    text-align: center;
+  }
+  .healthy-life-area.healthy-life-area-style-two .col-lg-6.pr-0 {
+    padding-left: 15px !important;
+  }
+  .appointment-area .col-lg-6.pl-0 {
+    padding-right: 15px !important;
+  }
+  .appointment-area.appointment-area-style-two .appointment-action {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .faq-accordion .accordion {
+    padding-right: 0;
+  }
+  .banner-area .banner-content h1 {
+    margin-bottom: 20px;
+  }
+  .banner-area .banner-content p {
+    margin-bottom: 30px;
+  }
+  .about-us-area.about-us-area-style-three .about-img-content h3 {
+    display: none;
+  }
+  .about-img-content .video {
+    right: 0;
+  }
+  .calculate-img {
+    margin-right: 0;
+  }
+  .single-expertise-box {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .why-choose-us-area::before {
+    display: none;
+  }
+  .user-area-style .contact-form-action form .login-action .forgot-login {
+    float: unset;
+  }
+  .user-area-style .contact-form-action form .right {
+    float: unset;
+  }
+  .user-area-style.recover-password-area .now-register {
+    float: unset;
+  }
+  .top-header .header-left-content .social-icon {
+    margin-right: 0;
+  }
+  .services-details-content .services-content-item img {
+    margin-bottom: 0;
+  }
+  .news-details-content .news-top-content blockquote {
+    padding: 20px;
+  }
+  .news-details-content .news-top-content blockquote i {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+  .hero-slider-area .hero-slider-content {
+    margin: auto;
+  }
+  .about-img-content .video {
+    right: 55px;
+  }
+  .about-content {
+    margin-right: 0;
+  }
+  .about-content ul li {
+    padding-right: 0;
+  }
+  .why-choose-us-content ul li {
+    padding-right: 0;
+  }
+  .single-what-we-offer .what-we-offer-content {
+    text-align: center;
+  }
+  .healthy-life-content {
+    margin-left: 0;
+  }
+  .healthy-life-content ul li {
+    padding-right: 0;
+  }
+  .team-area .section-title {
+    text-align: center;
+  }
+  .why-choose-us-img {
+    text-align: center;
+  }
+  .appointment-area.appointment-area-style-two .appointment-action {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .healthy-life-area.healthy-life-area-style-two .col-lg-6.pr-0 {
+    padding-left: 15px !important;
+  }
+  .single-expertise-box {
+    padding-right: 30px;
+  }
+  .banner-area .banner-content h1 {
+    margin-bottom: 20px;
+  }
+  .banner-area .banner-content p {
+    margin-bottom: 30px;
+  }
+  .about-us-area.about-us-area-style-three .about-img-content h3 {
+    display: none;
+  }
+  .about-img-content .video {
+    right: 0;
+  }
+  .calculate-img {
+    margin-right: 0;
+  }
+  .why-choose-us-area::before {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 992px) {
+  .about-content {
+    margin-right: 0;
+  }
+  .healthy-life-content {
+    margin-left: 0;
+  }
+  .appointment-area.appointment-area-style-two .appointment-action form h2 {
+    right: 343px;
+    top: 320px;
+  }
+  .calculate-img {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .about-us-area.about-us-area-style-three .about-img-content h3 {
+    display: none;
+  }
+  .team-area.team-area-style-three .section-title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .testimonials-content {
+    margin: auto;
+  }
+  .news-details-content .news-top-content blockquote {
+    padding-left: 30px;
+  }
+  .navbar-area .desktop-nav .navbar .others-option .option-item .search-overlay.search-popup {
+    right: auto;
+    left: 0;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .hero-slider-area .social-icon {
+    left: auto;
+    right: 88px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .mean-container a.meanmenu-reveal {
+    left: 0 !important;
+    right: auto !important;
+  }
+  .mean-container .mean-nav ul li a.mean-expand {
+    text-align: left;
+    right: unset;
+    left: 0;
+  }
+  .mean-container .mean-nav ul li a {
+    text-align: right;
+    float: right;
+  }
+  .others-option-for-responsive .dot-menu {
+    left: 60px;
+    right: auto;
+  }
+  .others-option-for-responsive .container .container {
+    left: 15px;
+    right: unset;
+  }
+  .others-option-for-responsive .others-option .get-quote {
+    margin-left: 0;
+    margin-right: 14px;
+  }
+  .others-option-for-responsive .others-option .option-item .search-overlay.search-popup {
+    right: -80px;
+  }
+}
+/*# sourceMappingURL=rtl.css.map */

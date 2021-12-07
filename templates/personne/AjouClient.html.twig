@@ -407,27 +407,7 @@
 <!-- End Header Area -->
 
 <!-- Start Page Title Area -->
-<div class="page-title-area register-style bg-18">
-    <div class="container">
-        <div class="page-title-content">
-            <h2>Register</h2>
 
-            <ul>
-                <li>
-                    <a href="index.html">
-                        Home
-                    </a>
-                </li>
-
-                <li>Pages</li>
-
-                <li>User</li>
-
-                <li class="active">Register</li>
-            </ul>
-        </div>
-    </div>
-</div>
 <!-- End Page Title Area -->
 
 <!-- Start User Area -->
@@ -437,12 +417,20 @@
             <div class="account-title">
                 <h2>Registration</h2>
             </div>
+            <div> {% if message is defined %}
+                    <div class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                {% endif %}</div>
             {{ form_start(fc)}}
             <div class="modal-body">
                 <div class="form-group">
-                    {{ form(fc,{'method':'GET'}) }}
+                    {{ form_widget(fc,{'method':'GET'}) }}
+                    <button class="btn"  onclick="validate()">{{ button_label|default('save') }}</button>
+                    <span id="msg"></span>
                 </div>
             </div>
+
             {{ form_end(fc)}}
         </div>
     </div>
@@ -590,6 +578,22 @@
 
 
 <!-- Jquery Min JS -->
+<script type="text/javascript">
+    function validate() {
+        var msg;
+        var str = document.getElementById("personne_form_type1_password").value;
+        if (str.match( /[0-9]/g) &&
+            str.match( /[A-Z]/g) &&
+            str.match(/[a-z]/g) &&
+            str.match( /[^a-zA-Z\d]/g) &&
+            str.length >= 10)
+            msg = "<p style='color:green'>Mot de passe fort.</p>";
+        else
+            alert('Mot de passe faible');
+        document.getElementById("msg").innerHTML= msg;
+
+    }
+</script>
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>
 <!-- Bootstrap Bundle Min JS -->
 <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>

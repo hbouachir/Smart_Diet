@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Personne;
-use phpDocumentor\Reflection\Types\Integer;
 
 /**
  * Suivi
@@ -82,7 +80,7 @@ class Suivi
     /**
      * @var \Personne
      *
-     * @ORM\ManyToOne(targetEntity="Personne",inversedBy="suivis")
+     * @ORM\ManyToOne(targetEntity="Personne")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idUser", referencedColumnName="id")
      * })
@@ -124,8 +122,6 @@ class Suivi
         $this->datesuivi = $datesuivi;
         return $this;
     }
-
-
 
     /**
      * @return float|null
@@ -254,24 +250,22 @@ class Suivi
     }
 
     /**
-     * @return \Personne
+     * @return Personne
      */
-    public function getIduser(): ?Personne
+    public function getIduser(): Personne
     {
         return $this->iduser;
     }
 
     /**
-     * @param Personne $iduser
+     * @param \Personne $iduser
      * @return Suivi
-     * self
      */
-    public function setIduser(Personne $iduser):self
+    public function setIduser(\Personne $iduser): Suivi
     {
         $this->iduser = $iduser;
         return $this;
     }
-
 
 
 }

@@ -15,7 +15,7 @@ class SuiviFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('datesuivi')
+
             ->add('taille')
             ->add('poid')
             ->add('glycemie')
@@ -23,7 +23,7 @@ class SuiviFormType extends AbstractType
             ->add('repas')
             ->add('diner')
             ->add('notes')
-            ->add('iduser' , EntityType::class,['class'=> Personne::class,'choice_label'=>'id','empty_data' => '',])
+           # ->add('iduser' , EntityType::class,['class'=> Personne::class,'choice_label'=>'id','empty_data' => '',])
         ;
     }
 

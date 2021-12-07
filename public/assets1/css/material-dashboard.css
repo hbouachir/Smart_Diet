@@ -13916,7 +13916,7 @@ label,
   transition: 0.2s ease all; }
 
 .form-control {
-  border: none; }
+  ; }
   .form-control.is-invalid {
     border: 1px solid #d2d6da;
     padding: 0.625rem 0.75rem;

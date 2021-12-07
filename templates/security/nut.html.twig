@@ -6,32 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap Min CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
     <!-- Owl Theme Default Min CSS -->
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
     <!-- Owl Carousel Min CSS -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
     <!-- Boxicons Min CSS -->
-    <link rel="stylesheet" href="assets/css/boxicons.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/boxicons.min.css')}}">
     <!-- Flaticon CSS -->
-    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="{{asset('assets/css/flaticon.css')}}">
     <!-- Meanmenu Min CSS -->
-    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/meanmenu.min.css')}}">
     <!-- Animate Min CSS -->
-    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}">
     <!-- Nice Select Min CSS -->
-    <link rel="stylesheet" href="assets/css/nice-select.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/nice-select.min.css')}}">
     <!-- Date Picker CSS-->
-    <link rel="stylesheet" href="assets/css/date-picker.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/date-picker.min.css')}}">
     <!-- Magnific Popup Min CSS -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.min.css')}}">
     <!-- Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="{{asset('assets/images/favicon.png')}}">
     <!-- Title -->
     <title>Aava - Diet & Nutrition Health Center HTML Template</title>
 </head>
@@ -129,9 +129,9 @@
 
                         <ul class="my-account">
                             <li>
-                                <a href="my-account.html">
+                                <a href="profilN">
                                     <i class="bx bxs-user"></i>
-                                    Account
+                                   My  Account
                                 </a>
                             </li>
                             <li>
@@ -139,6 +139,12 @@
                                     <i class='bx bxs-cart-alt' ></i>
                                     Basket
                                     <span>0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('logout') }}">
+                                    <i class="bx bxs-user"></i>
+                                    log out
                                 </a>
                             </li>
                         </ul>
@@ -408,84 +414,111 @@
 <div class="shopping-cart-area wishlist-style ptb-100">
     <div class="container">
         <div class="shopping-cart-area wishlist-style ptb-100">
-            <div><h3>Nutritionniste connecté a pour id = {{ app.session.get('id') }} </h3>
+<div>
+            <a href="{{ path('profilN') }}" class="btn btn-success" >Profil</a>
+    {% if app.session.flashBag.has('INFO') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('INFO') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if app.session.flashBag.has('Notice') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('Notice') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
 
-            </div>
-        <a href="{{ path('AjouS') }}" class="btn btn-success" >AjouterSuivi</a>
-        <form class="cart-controller">
-            <div class="cart-table table-responsive">
-
-                <table class="table table-bordered">
-
-                    <tr>
-                        <th>IdSuivi</th>
-
-                        <th>IdUser</th>
-
-                        <th>DateSuivi</th>
-
-                        <th>Taille</th>
-
-                        <th>Poids</th>
-
-                        <th>glycemie</th>
-
-                        <th>petitdej</th>
-
-                        <th>repas</th>
-
-                        <th>Diner</th>
-
-                        <th>Notes</th>
+</div>
+            <hr>
+            <div>
+                {{ form_start(form) }}
+                {{ form_row(form.nom, { 'attr': {'class': 'form-control'} }) }}
 
 
-                        <th>services</th>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche par nom</button>
 
-                    </tr>
-                    <tbody>
-                    {% for f in c %}
+                {{ form_end(form) }}</div>
 
-
-                            <td>{{ f.idsuivi }}</td>
-
-
-                            <td>{{ f.iduser.id }}</td>
+            <form class="cart-controller">
+                <div class="cart-table table-responsive">
+       <div> <table class="table align-items-center mb-0">
+               <tr>
 
 
-                            <td>{{ f.datesuivi }}</td>
+                   <th scope="col">Nom</th>
+
+                   <th scope="col">prenom</th>
+
+                   <th scope="col">dateNaissance</th>
+
+                   <th scope="col">email</th>
 
 
-                            <td>{{ f.taille }}</td>
+
+                   <th scope="col">adresse</th>
+
+                   <th scope="col">referenceClient</th>
+
+                   <th scope="col">Numero</th>
+
+                   <th scope="col">civilite</th>
 
 
-                            <td>{{ f.poid }}</td>
+
+                   <th scope="col">Maladie</th>
 
 
-                            <td>{{ f.glycemie }}</td>
+                   <th scope="col">services</th>
+
+               </tr>
 
 
-                            <td>{{ f.petitdej }}</td>
-
-                            <td>{{ f.repas }}</td>
-
-                            <td>{{ f.diner }}</td>
-
-                            <td>{{ f.notes }}</td>
-
-                           <td> <a href="{{ path('DS',{'id':f.idsuivi }) }}" class="remove">
-                                <i class="bx bx-trash"></i>
-                            </a></td>
-
-                            <td><a href="{{ path('US',{'id':f.idsuivi}) }}" class="btn btn-primary">Update</a></td>
+               {% for f in n %}
+                   <tr >
 
 
-                        </tr>
-                    {% endfor %}
-                    </tbody>
 
-                </table>
+                       <td>{{ f.nom }}</td>
+
+
+                       <td>{{ f.prenom }}</td>
+
+
+                       <td>{{ f.dateNaissance }}</td>
+
+
+                       <td>{{ f.mail }}</td>
+
+
+
+                       <td>{{ f.adresse }}</td>
+
+                       <td>{{ f.referenceClient }}</td>
+
+                       <td>{{ f.numero }}</td>
+
+                       <td>{{ f.civilite }}</td>
+
+
+
+                       <td>{{ f.maladie }}</td>
+
+
+                       <td><a href="{{ path('SHOW',{'id':f.id}) }}" class="btn btn-primary">suivi</a></td>
+                   </tr>
+               {% endfor %}
+
+
+           </table></div>
+
+
+
             </div>
         </form>
+    </div>
     </div>
 </div>
 </body>
